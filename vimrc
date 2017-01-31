@@ -53,7 +53,7 @@ let &t_8b = "[48;2;%lu;%lu;%lum"
 
 " Default FZF setting
 "set rtp+=/usr/local/opt/fzf
-let $FZF_DEFAULT_COMMAND='find . -type f|cut -b3-'
+let $FZF_DEFAULT_COMMAND='find . -type f -o -type l|cut -b3-'
 
 
 " Plugins {{{1
