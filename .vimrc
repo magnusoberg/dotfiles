@@ -31,6 +31,10 @@ set noshowmode                 " Do not show extraneous vim info while having po
 set backspace=indent,eol,start " allow backspacing backwards past the start
 set incsearch
 set hlsearch
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 
 set foldmethod=marker
 set foldcolumn=3
