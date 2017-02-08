@@ -22,6 +22,7 @@ setopt appendhistory autocd extendedglob nomatch
 unsetopt beep notify
 
 bindkey -e
+export PS1='%~ %# '
 
 # The following lines were added by compinstall {{{1
 zstyle :compinstall filename '/Users/moberg/.zshrc'
