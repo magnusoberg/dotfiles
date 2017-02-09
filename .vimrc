@@ -35,6 +35,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set list listchars=eol:↲,tab:▶\ ,nbsp:␣,extends:…,trail:•
 
 set foldmethod=marker
 set foldcolumn=3
