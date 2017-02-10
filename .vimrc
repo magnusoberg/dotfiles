@@ -37,14 +37,15 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set updatetime=250             " Recommended setting from vim-gitgutter
+set previewheight=25           " Fugitive Gstatus window is a bit small by default
 
 " Note 'tab' won't be visible unless set noexpandtab
 " You need to set list for listchars to be visible.
 set list listchars=eol:↲,tab:▶\ ,nbsp:␣,extends:…,trail:•
 
 set foldmethod=marker
-set foldcolumn=3
-set laststatus=2         " Show statusline even when there is only 1 window active
+set foldcolumn=1 " I don't use nested folding much, so 1 column should be plenty
+set laststatus=2 " Show statusline even when there is only 1 window active
 
 " Remove all GUI menu's and toolbars
 " set guioptions-=T
