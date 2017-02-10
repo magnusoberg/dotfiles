@@ -25,20 +25,10 @@ unsetopt beep notify
 bindkey -e
 export PS1='%~ %# '
 
-# The following lines were added by compinstall {{{1
+# Added by compinstall
 zstyle :compinstall filename '/Users/moberg/.zshrc'
 
-# Commented out the below two lines due to zplug running compinit on it's own.
-# autoload -Uz compinit
-# compinit
-# End of lines added by compinstall }}}1
-
 eval $(keychain --eval --agents ssh --inherit any id_rsa)
-
-alias ls='ls -FG'
-alias ll='ls -la'
-alias es='ssh es'
-alias ic='ssh ic'
 
 # Source my files
 source ~/.zsh/aliases.zsh
