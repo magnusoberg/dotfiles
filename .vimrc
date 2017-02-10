@@ -39,9 +39,7 @@ set list listchars=eol:↲,tab:▶\ ,nbsp:␣,extends:…,trail:•
 
 set foldmethod=marker
 set foldcolumn=3
-
-" Show statusline even when there is only 1 window active
-set laststatus=2
+set laststatus=2         " Show statusline even when there is only 1 window active
 
 " Remove all GUI menu's and toolbars
 " set guioptions-=T
