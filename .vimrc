@@ -1,5 +1,6 @@
 " Vim 8.x config file optimized for Mac OSX
 " Setup leader key to use Space as leader instead of ','
+
 nnoremap <space> <nop>
 let mapleader="\<space>"
 let maplocalleader="\\"
@@ -35,6 +36,10 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set updatetime=250             " Recommended setting from vim-gitgutter
+
+" Note 'tab' won't be visible unless set noexpandtab
+" You need to set list for listchars to be visible.
 set list listchars=eol:↲,tab:▶\ ,nbsp:␣,extends:…,trail:•
 
 set foldmethod=marker
@@ -83,6 +88,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'edkolev/tmuxline.vim'             " Will sync tmux look and feel to match vim-airline themes selected.
 Plug 'vim-airline/vim-airline'          " Prefer this over Powerline as it seems more configurable
 Plug 'vim-airline/vim-airline-themes'   " Themes are now a separate plugin
+Plug 'airblade/vim-gitgutter'           " Show Git changes in the gutter line.
 Plug 'vim-scripts/SyntaxAttr.vim'       " Call SyntaxAttr() to find attibute under cursor.
 Plug 'msanders/snipmate.vim'            " enter text+tab to expand dynamic text with preset tabstops etc.
 " Plug 'altercation/vim-colors-solarized' " Vim specific Solarized theme.
@@ -94,7 +100,8 @@ call plug#end()
 let g:EasyMotion_do_mapping = 0     " Disable default mappings
 let g:EasyMotion_smartcase  = 1
 
-map <Leader> <Plug>(easymotion-prefix)  " Make mapping prefix just leader and not leader leader
+" Make EasyMotion prefix just <leader> and not <leader><leader>
+map <Leader> <Plug>(easymotion-prefix)
 
 map <Leader>f <Plug>(easymotion-f)
 map <Leader>F <Plug>(easymotion-F)
@@ -113,8 +120,14 @@ map <Leader>k <Plug>(easymotion-k)
 map <Leader>n <Plug>(easymotion-n)
 map <Leader>N <Plug>(easymotion-N)
 map <Leader>s <Plug>(easymotion-s)
-
-
+" Make 's' search anywhere for two characters (even other windows)
+nmap s <Plug>(easymotion-overwin-f2)
+" Overide Vims built-in '/' search. Use 'tab' and 'shift-tab' to move around.
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+" Use remapped 'n' and 'N' when moving around.
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
 " Airline settings {{{1
 
 let g:airline_powerline_fonts = 1
