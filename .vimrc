@@ -64,6 +64,8 @@ let &t_8b = "[48;2;%lu;%lu;%lum"
 "set rtp+=/usr/local/opt/fzf
 let $FZF_DEFAULT_COMMAND='find . -type f -o -type l|cut -b3-'
 
+" Always show the gitgutter column to avoid screen moving when it appears
+let g:gitgutter_sign_column_always = 1
 " Directory management (backup, undo, swap) {{{1
 " Save your backups to a less annoying place than the current directory.
 " If you have .vim-backup in the current directory, it'll use that.
