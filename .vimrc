@@ -24,10 +24,12 @@ nnoremap -a :call SyntaxAttr()<CR>
 xmap ga <Plug>(EasyAlign)
 nnoremap ga <Plug>(EasyAlign)
 
-set hidden
-set relativenumber number
+" Case-insensitive searching. Uppercase searches still match only upper-case.
 set ignorecase
 set smartcase
+
+set hidden
+set relativenumber number
 set noshowmode                 " Do not show extraneous vim info while having powerline show the modes
 set backspace=indent,eol,start " allow backspacing backwards past the start
 set incsearch
@@ -62,7 +64,7 @@ let &t_8b = "[48;2;%lu;%lu;%lum"
 
 " Default FZF setting
 "set rtp+=/usr/local/opt/fzf
-let $FZF_DEFAULT_COMMAND='find . -type f -o -type l|cut -b3-'
+let $FZF_DEFAULT_COMMAND='find . -type f -o -type l|grep -v ''.git/''|cut -b3-'
 
 " Always show the gitgutter column to avoid screen moving when it appears
 let g:gitgutter_sign_column_always = 1
@@ -167,12 +169,12 @@ map <Leader>N <Plug>(easymotion-N)
 map <Leader>s <Plug>(easymotion-s)
 " Make 's' search anywhere for two characters (even other windows)
 nmap s <Plug>(easymotion-overwin-f2)
-" Overide Vims built-in '/' search. Use 'tab' and 'shift-tab' to move around.
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-" Use remapped 'n' and 'N' when moving around.
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
+" " Overide Vims built-in '/' search. Use 'tab' and 'shift-tab' to move around.
+" map  / <Plug>(easymotion-sn)
+" omap / <Plug>(easymotion-tn)
+" " Use remapped 'n' and 'N' when moving around.
+" map  n <Plug>(easymotion-next)
+" map  N <Plug>(easymotion-prev)
 " Airline settings {{{1
 
 let g:airline_powerline_fonts = 1
@@ -187,8 +189,19 @@ let g:tmuxline_preset = {
       \'z'    : '%a %d-%b-%Y %H:%M:%S',
       \'options' : {'status-justify' : 'left'}}
 
+" fzf specific tweaks {{{1
+" <leader>c to choose color schemes interactively
+nnoremap <silent> <Leader>c :call fzf#run({
+            \   'source':
+            \     map(split(globpath(&rtp, "colors/*.vim"), "\n"),
+            \         "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
+            \   'sink':    'colo',
+            \   'options': '+m',
+            \   'left':    30
+            \ })<CR>
+
 "Finalizing setup {{{1
 
-colorscheme jelleybeans
+colorscheme jellybeans
 syntax on
 
