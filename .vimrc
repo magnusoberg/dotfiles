@@ -46,15 +46,10 @@ set previewheight=25           " Fugitive Gstatus window is a bit small by defau
 " You need to set list for listchars to be visible.
 set list listchars=eol:↲,tab:▶\ ,nbsp:␣,extends:…,trail:•
 
-set foldmethod=marker
-set foldcolumn=1 " I don't use nested folding much, so 1 column should be plenty
-set laststatus=2 " Show statusline even when there is only 1 window active
-
-" Remove all GUI menu's and toolbars
-" set guioptions-=T
-" set guioptions-=m
-" set guioptions-=r
-set shortmess+=I "Don't display a startup message when starting a blank Vim.
+set foldmethod=marker " Use marks for folding... not syntax
+set foldcolumn=1      " I don't use nested folding much, so 1 column should be plenty
+set laststatus=2      " Show statusline even when there is only 1 window active
+set shortmess+=I      " Don't display a startup message when starting a blank Vim.
 
 " Only set Truecolor if Vim supports it
 if has("termguicolors")
