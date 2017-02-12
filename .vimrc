@@ -1,7 +1,6 @@
 " Vim config file optimized for Mac OSX
 " Author: Magnus Oberg
 
-
 " Setup leader key to use Space as leader instead of ','
 nnoremap <space> <nop>
 let mapleader="\<space>"
@@ -119,6 +118,14 @@ endif
 
 
 " Plugins {{{1
+
+" Install 'junegunn/vim-plug' if not already installed & install plugins
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'                   " Seems to have problems this way. Simply works with .fzf added to rtp
@@ -137,10 +144,11 @@ Plug 'godlygeek/tabular'                  " Allow alignment based on a pattern/c
 Plug 'mileszs/ack.vim'
 " Plug 'PProvost/vim-ps1'                 " PowerShell syntax coloring
 
-if has("ruby")
-    Plug 'sjbach/lusty'                   " Lusty requires Ruby to work
-endif
-
+" Lusty requires Ruby to work
+" Use 'Plug' syntax for conditionally loading only if support is there.
+" Avoids a problem with PlugClean removing bundle if not supported.
+" See https://github.com/junegunn/vim-plug/wiki/faq for more details
+Plug 'sjbach/lusty', has('ruby') ? {} : { 'on': [] }
 Plug 'terryma/vim-multiple-cursors'       " Allows Sublime style multiple cursors!
 Plug 'tomtom/tcomment_vim'
 Plug 'edkolev/tmuxline.vim'               " Will sync tmux look and feel to match vim-airline themes selected.
@@ -212,7 +220,6 @@ nnoremap <silent> <Leader>c :call fzf#run({
             \ })<CR>
 
 "Finalizing setup {{{1
-
+" No need to set 'syntax on', or 'filetype plugin indent' etc. as 'Plug' takes
+" care of all that. So all that remains is to select the colorscheme :)
 colorscheme jellybeans
-syntax on
-
