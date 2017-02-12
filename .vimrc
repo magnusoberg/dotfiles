@@ -22,7 +22,7 @@ nnoremap -a :call SyntaxAttr()<CR>
 
 " EasyAlign mappings
 xmap ga <Plug>(EasyAlign)
-nnoremap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " Case-insensitive searching. Uppercase searches still match only upper-case.
 set ignorecase
@@ -55,12 +55,17 @@ set laststatus=2 " Show statusline even when there is only 1 window active
 " set guioptions-=r
 set shortmess+=I "Don't display a startup message when starting a blank Vim.
 
-" Allow Vim to display 24 bit truecolor
-set termguicolors
-" Since tmux needs TERM to be set to screen-* the below t_ values need to be set manually
-" as Vim will not recognize anything not xterm-*
-let &t_8f = "[38;2;%lu;%lu;%lum"
-let &t_8b = "[48;2;%lu;%lu;%lum"
+" Only set Truecolor if Vim supports it
+if has("termguicolors")
+    " Allow Vim to display 24 bit truecolor
+    set termguicolors
+
+    " Since tmux needs TERM to be set to screen-* the below t_ values need to be set manually
+    " as Vim will not recognize anything not xterm-*
+    let &t_8f = "[38;2;%lu;%lu;%lum"
+    let &t_8b = "[48;2;%lu;%lu;%lum"
+
+endif
 
 " Default FZF setting
 "set rtp+=/usr/local/opt/fzf
@@ -114,30 +119,34 @@ endif
 " Plugins {{{1
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'                 " Seems to have problems this way. Simply works with .fzf added to rtp
+Plug 'junegunn/fzf.vim'                   " Seems to have problems this way. Simply works with .fzf added to rtp
 Plug 'junegunn/vim-easy-align'
-" Plug 'tpope/vim-sensible'
+                                          " Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-scriptease'             " Allow K to lookup vim language features in help. Lots of other things too, but this is the main thing I use it for.
+Plug 'tpope/vim-scriptease'               " Allow K to lookup vim language features in help. Lots of other things too, but this is the main thing I use it for.
 Plug 'tpope/vim-abolish'
-" Plug 'chriskempson/base16-vim'
+                                          " Plug 'chriskempson/base16-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'flazz/vim-colorschemes'
-Plug 'godlygeek/tabular'                " Allow alignment based on a pattern/character
+Plug 'godlygeek/tabular'                  " Allow alignment based on a pattern/character
 " Plug 'guns/xterm-color-table.vim'       " Enables XtermColorTable command. Press # to yank, t to toggle RGB, f to set fg
 Plug 'mileszs/ack.vim'
 " Plug 'PProvost/vim-ps1'                 " PowerShell syntax coloring
-Plug 'sjbach/lusty'
-Plug 'terryma/vim-multiple-cursors'     " Allows Sublime style multiple cursors!
+
+if has("ruby")
+    Plug 'sjbach/lusty'                   " Lusty requires Ruby to work
+endif
+
+Plug 'terryma/vim-multiple-cursors'       " Allows Sublime style multiple cursors!
 Plug 'tomtom/tcomment_vim'
-Plug 'edkolev/tmuxline.vim'             " Will sync tmux look and feel to match vim-airline themes selected.
-Plug 'vim-airline/vim-airline'          " Prefer this over Powerline as it seems more configurable
-Plug 'vim-airline/vim-airline-themes'   " Themes are now a separate plugin
-Plug 'airblade/vim-gitgutter'           " Show Git changes in the gutter line.
-Plug 'vim-scripts/SyntaxAttr.vim'       " Call SyntaxAttr() to find attibute under cursor.
-Plug 'msanders/snipmate.vim'            " enter text+tab to expand dynamic text with preset tabstops etc.
+Plug 'edkolev/tmuxline.vim'               " Will sync tmux look and feel to match vim-airline themes selected.
+Plug 'vim-airline/vim-airline'            " Prefer this over Powerline as it seems more configurable
+Plug 'vim-airline/vim-airline-themes'     " Themes are now a separate plugin
+Plug 'airblade/vim-gitgutter'             " Show Git changes in the gutter line.
+Plug 'vim-scripts/SyntaxAttr.vim'         " Call SyntaxAttr() to find attibute under cursor.
+Plug 'msanders/snipmate.vim'              " enter text+tab to expand dynamic text with preset tabstops etc.
 " Plug 'altercation/vim-colors-solarized' " Vim specific Solarized theme.
 call plug#end()
 
