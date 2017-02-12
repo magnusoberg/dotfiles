@@ -1,6 +1,8 @@
-" Vim 8.x config file optimized for Mac OSX
-" Setup leader key to use Space as leader instead of ','
+" Vim config file optimized for Mac OSX
+" Author: Magnus Oberg
 
+
+" Setup leader key to use Space as leader instead of ','
 nnoremap <space> <nop>
 let mapleader="\<space>"
 let maplocalleader="\\"
@@ -121,13 +123,13 @@ call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'                   " Seems to have problems this way. Simply works with .fzf added to rtp
 Plug 'junegunn/vim-easy-align'
-                                          " Plug 'tpope/vim-sensible'
+" Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-scriptease'               " Allow K to lookup vim language features in help. Lots of other things too, but this is the main thing I use it for.
 Plug 'tpope/vim-abolish'
-                                          " Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'flazz/vim-colorschemes'
 Plug 'godlygeek/tabular'                  " Allow alignment based on a pattern/character
