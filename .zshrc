@@ -75,7 +75,7 @@ zplug load
 
 
 # Source tmuxinator completion if it exists
-test -f source ~/.zsh/tmuxinator.zsh && source ~/.zsh/tmuxinator.zsh
+test -f ~/.zsh/tmuxinator.zsh && source ~/.zsh/tmuxinator.zsh
 
 # I should review these fucntions in more detail at some time.
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
