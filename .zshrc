@@ -58,6 +58,9 @@ FZF_CTRL_T_COMMAND="command find -L . -mindepth 1 \\( -fstype 'devfs' -o -fstype
 
 # Setup zplug
 export ZPLUG_HOME="/usr/local/opt/zplug"
+
+# Install zplug if it is not installed already
+[[ ! -e ${ZPLUG_HOME} ]] && curl -sL zplug.sh/installer | zsh
 source "${ZPLUG_HOME}/init.zsh"
 
 # setopt prompt_subst
@@ -78,4 +81,4 @@ zplug load
 
 # Source iTerm integration files if they exist
 # I should review these fucntions in more detail at some time
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+[[ -e "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
