@@ -25,10 +25,10 @@ setopt NO_NOTIFY
 setopt SHARE_HISTORY          # Share history between all sessions.
 
 bindkey -e
-export PS1='%~ %# '
+export PS1='%m %~ %# '
 
 # Added by compinstall
-zstyle :compinstall filename '/Users/moberg/.zshrc'
+zstyle :compinstall filename ~/.zshrc
 
 eval $(keychain --eval --agents ssh --inherit any id_rsa)
 
