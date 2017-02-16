@@ -57,10 +57,7 @@ FZF_CTRL_T_COMMAND="command find -L . -mindepth 1 \\( -fstype 'devfs' -o -fstype
     -o -type l -print 2> /dev/null | cut -b3-"
 
 # Setup zplug
-export ZPLUG_HOME="/usr/local/opt/zplug"
-
-# Install zplug if it is not installed already
-[[ ! -e ${ZPLUG_HOME} ]] && curl -sL zplug.sh/installer | zsh
+export ZPLUG_HOME="${HOME}/.zplug"
 source "${ZPLUG_HOME}/init.zsh"
 
 # setopt prompt_subst
