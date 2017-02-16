@@ -217,4 +217,4 @@ nnoremap <silent> <Leader>c :call fzf#run({
 "Finalizing setup {{{1
 " No need to set 'syntax on', or 'filetype plugin indent' etc. as 'Plug' takes
 " care of all that. So all that remains is to select the colorscheme :)
-colorscheme jellybeans
+silent! colorscheme jellybeans
