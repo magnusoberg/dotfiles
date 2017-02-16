@@ -33,15 +33,14 @@ zstyle :compinstall filename '/Users/moberg/.zshrc'
 eval $(keychain --eval --agents ssh --inherit any id_rsa)
 
 # Source my files
-source ~/.zsh/aliases.zsh
-source ~/.zsh/functions.zsh
-source ~/.zsh/magic-abbrev.zsh
-source ~/.zsh/marks.zsh
-source ~/.zsh/variables.zsh
+# make sure to secure your ~/.zsh directory so only you can write there!
+for f in ~/.zsh/*.zsh; do
+    source ${f}
+done
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-path=('/Users/moberg/bin' $path)
+[[ -d ~/bin ]] && path=(~/bin $path)
 export PATH
 export EDITOR=vim
 
@@ -75,7 +74,8 @@ zplug load
 
 
 # Source tmuxinator completion if it exists
-test -f ~/.zsh/tmuxinator.zsh && source ~/.zsh/tmuxinator.zsh
+[[ -f ~/.zsh/completions/tmuxinator.zsh ]] && source ~/.zsh/completions/tmuxinator.zsh
 
-# I should review these fucntions in more detail at some time.
+# Source iTerm integration files if they exist
+# I should review these fucntions in more detail at some time
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
