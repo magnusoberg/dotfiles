@@ -34,7 +34,8 @@ eval $(keychain --eval --agents ssh --inherit any id_rsa)
 
 # Source my files
 # make sure to secure your ~/.zsh directory so only you can write there!
-for f in ~/.zsh/*.zsh; do
+local files=(~/.zsh/*.zsh) 2>/dev/null
+for f in $files; do
     source ${f}
 done
 
@@ -75,7 +76,15 @@ zplug load
 
 # Source tmuxinator completion if it exists
 [[ -f ~/.zsh/completions/tmuxinator.zsh ]] && source ~/.zsh/completions/tmuxinator.zsh
+local files=(~/.zsh/completions/*.zsh-completion) 2>/dev/null
+for f in $files; do
+    source ${f}
+done
 
 # Source iTerm integration files if they exist
 # I should review these fucntions in more detail at some time
 [[ -e "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
+
+alias ll='ls -lah'
+
+#End of file
