@@ -191,7 +191,7 @@ nmap s <Plug>(easymotion-overwin-f2)
 " map  N <Plug>(easymotion-prev)
 " Airline settings {{{1
 
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 " let g:airline_theme="bubblegum"
 let g:airline#extensions#tabline#enabled = 0
 
@@ -217,4 +217,5 @@ nnoremap <silent> <Leader>c :call fzf#run({
 "Finalizing setup {{{1
 " No need to set 'syntax on', or 'filetype plugin indent' etc. as 'Plug' takes
 " care of all that. So all that remains is to select the colorscheme :)
+" Use silent to avoid error being shown if colorscheme does not exist yet
 silent! colorscheme jellybeans
