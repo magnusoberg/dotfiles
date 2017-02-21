@@ -1,6 +1,9 @@
 # .zshrc file
 # Author: Magnus Oberg
 
+# Define $home_system variable to conditionally run certain items only on the home system
+local home_system='IT-moberg'
+
 export HISTFILE=~/.histfile
 export HISTSIZE=100000        # 100K history lines should be enough
 export SAVEHIST=$HISTSIZE
@@ -33,7 +36,9 @@ zstyle :compinstall filename ~/.zshrc
 # Used to also include calls to compinit - removed due to zplug calling this
 # End of compinstall }}}
 
-eval $(keychain --eval --agents ssh --inherit any id_rsa)
+if [[ $HOST == $home_system ]]; then
+    eval $(keychain --eval --agents ssh --inherit any id_rsa)
+fi
 
 # Source my files
 # make sure to secure your ~/.zsh directory so only you can write there!
