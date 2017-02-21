@@ -5,6 +5,7 @@ export HISTFILE=~/.histfile
 export HISTSIZE=100000        # 100K history lines should be enough
 export SAVEHIST=$HISTSIZE
 
+# Set options {{{
 setopt APPEND_HISTORY
 setopt AUTO_CD
 setopt BANG_HIST              # Treat the '!' character specially during expansion.
@@ -27,8 +28,10 @@ setopt SHARE_HISTORY          # Share history between all sessions.
 bindkey -e
 export PS1='%m %~ %# '
 
-# Added by compinstall
+# Added by compinstall {{{
 zstyle :compinstall filename ~/.zshrc
+# Used to also include calls to compinit - removed due to zplug calling this
+# End of compinstall }}}
 
 eval $(keychain --eval --agents ssh --inherit any id_rsa)
 
