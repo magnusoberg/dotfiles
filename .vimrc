@@ -31,6 +31,7 @@ set smartcase
 
 set hidden
 set relativenumber number
+set modeline                   " Allow modelines to set settings
 set noshowmode                 " Do not show extraneous vim info while having powerline show the modes
 set backspace=indent,eol,start " allow backspacing backwards past the start
 set incsearch
@@ -191,7 +192,7 @@ nmap s <Plug>(easymotion-overwin-f2)
 " map  N <Plug>(easymotion-prev)
 " Airline settings {{{1
 
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 " let g:airline_theme="bubblegum"
 let g:airline#extensions#tabline#enabled = 0
 
