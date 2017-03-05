@@ -71,15 +71,16 @@ source "${ZPLUG_HOME}/init.zsh"
 
 # setopt prompt_subst
 
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+# zplug "zsh-users/zsh-autosuggestions"
+# zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # zplug "akinjide/chi", as:theme
 # zplug "aaronjamesyoung/aaron-zsh-theme", as:theme, from:oh-my-zsh
 # zplug "modules/prompt", from:prezto
 # zplug 'themes/sorin', from:oh-my-zsh
 # zplug 'themes/robbyrussell', from:oh-my-zsh
 
-zplug check || zplug install
-zplug load
+# zplug check || zplug install
+# zplug load
 
 
 # Source tmuxinator completion if it exists
@@ -94,5 +95,8 @@ done
 [[ -e "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
 
 alias ll='ls -lah'
+if [[ ! $(uname -s) == "Darwin" ]]; then
+    alias ls='ls --color=auto'
+fi
 
 #End of file
