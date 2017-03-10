@@ -25,6 +25,9 @@ nnoremap -a :call SyntaxAttr()<CR>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
 " Case-insensitive searching. Uppercase searches still match only upper-case.
 set ignorecase
 set smartcase
