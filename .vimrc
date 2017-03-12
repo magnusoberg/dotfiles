@@ -155,7 +155,7 @@ Plug 'vim-airline/vim-airline'            " Prefer this over Powerline as it see
 Plug 'vim-airline/vim-airline-themes'     " Themes are now a separate plugin
 Plug 'airblade/vim-gitgutter'             " Show Git changes in the gutter line.
 Plug 'vim-scripts/SyntaxAttr.vim'         " Call SyntaxAttr() to find attibute under cursor.
-Plug 'msanders/snipmate.vim'              " enter text+tab to expand dynamic text with preset tabstops etc.
+Plug 'garbas/vim-snipmate'                " enter text+tab to expand dynamic text with preset tabstops etc.
 " Plug 'altercation/vim-colors-solarized' " Vim specific Solarized theme.
 call plug#end()
 
