@@ -45,6 +45,7 @@ set softtabstop=4
 set expandtab
 set updatetime=250             " Recommended setting from vim-gitgutter
 set previewheight=25           " Fugitive Gstatus window is a bit small by default
+set scrolloff=5                " Scroll offset for top/bottom of window
 
 " Note 'tab' won't be visible unless set noexpandtab
 " You need to set list for listchars to be visible.
