@@ -23,6 +23,7 @@ setopt HIST_REDUCE_BLANKS     # Remove superfluous blanks before recording entry
 setopt HIST_SAVE_NO_DUPS      # Don't write duplicate entries in the history file.
 setopt HIST_VERIFY            # Don't execute immediately upon history expansion.
 setopt INC_APPEND_HISTORY     # Write to the history file immediately, not when the shell exits.
+setopt INTERACTIVE_COMMENTS   # Allow comments on the command line
 setopt NO_BEEP
 setopt NO_MATCH
 setopt NO_NOTIFY
