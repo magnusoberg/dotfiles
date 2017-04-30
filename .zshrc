@@ -2,7 +2,7 @@
 # Author: Magnus Oberg
 
 # Define $home_system variable to conditionally run certain items only on the home system
-local home_system='IT-moberg'
+local home_system='Magnus.local'
 
 export HISTFILE=~/.histfile
 export HISTSIZE=100000        # 100K history lines should be enough
@@ -95,6 +95,7 @@ done
 [[ -e "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
 
 alias ll='ls -lah'
+alias ls='ls -GF'
 if [[ ! $(uname -s) == "Darwin" ]]; then
     alias ls='ls --color=auto'
 fi
