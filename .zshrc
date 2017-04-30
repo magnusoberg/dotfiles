@@ -73,7 +73,7 @@ source "${ZPLUG_HOME}/init.zsh"
 # setopt prompt_subst
 
 # zplug "zsh-users/zsh-autosuggestions"
-# zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # zplug "akinjide/chi", as:theme
 # zplug "aaronjamesyoung/aaron-zsh-theme", as:theme, from:oh-my-zsh
 # zplug "modules/prompt", from:prezto
@@ -100,5 +100,9 @@ alias ls='ls -GF'
 if [[ ! $(uname -s) == "Darwin" ]]; then
     alias ls='ls --color=auto'
 fi
+
+# Common aliases
+alias gst='git st'
+
 
 #End of file
