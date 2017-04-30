@@ -1,0 +1,8 @@
+[user]
+	email = magnus2.oberg@gmail.com
+	name = Magnus Oberg
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
