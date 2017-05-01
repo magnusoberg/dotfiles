@@ -59,7 +59,6 @@ pbcopy < ~/.ssh/id_rsa.pub
 # Paste key into new SSH key setup in GitHub
 # Test that it works
 ssh -T git@github.com
-
-# Verify that it matches
 ~~~
+### Verify that it matches the fingerprints on github page
 [Test SSH connection to GitHub](https://help.github.com/articles/testing-your-ssh-connection/)
