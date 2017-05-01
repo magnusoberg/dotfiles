@@ -9,7 +9,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew tap caskroom/cask
 
 #Install everything
-brew install tmux keychain git
+brew install tmux keychain git jq ag
 brew cask install iterm2
 
 # Get fonts and colorschemes
