@@ -80,8 +80,8 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # zplug 'themes/sorin', from:oh-my-zsh
 # zplug 'themes/robbyrussell', from:oh-my-zsh
 
-# zplug check || zplug install
-# zplug load
+zplug check || zplug install
+zplug load
 
 
 # Source tmuxinator completion if it exists
