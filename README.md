@@ -9,7 +9,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew tap caskroom/cask
 
 #Install everything
-brew install tmux keychain
+brew install tmux keychain git
 brew cask install iterm2
 
 # Get fonts and colorschemes
@@ -60,6 +60,6 @@ pbcopy < ~/.ssh/id_rsa.pub
 # Test that it works
 ssh -T git@github.com
 
-# Verify that it matches 
+# Verify that it matches
 ~~~
 [Test SSH connection to GitHub](https://help.github.com/articles/testing-your-ssh-connection/)
