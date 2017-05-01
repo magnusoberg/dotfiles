@@ -50,8 +50,8 @@ ssh-keygen -t rsa -b 4096
 ssh-add
 
 # Setup git
-git config --global user.email magnus2.oberg@gmail.com
-git config --global user.name "Magnus Oberg"
+git config --global user.email "your.name@example.org"   # Should match one of your emails added in GitHub
+git config --global user.name "Your Name"
 
 # Login to GitHub account and select settings/SSH keys
 # Add new SSH key
