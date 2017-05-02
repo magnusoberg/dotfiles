@@ -45,20 +45,19 @@ cd ~
 mkdir -p .ssh
 cd ~/.ssh
 ssh-keygen -t rsa -b 4096
-# Remember to store the password somewhere safe like LastPass
-# Add key to ssh-agent
+
+# Add key to ssh-agent unless you logout and let keychain take care of it for you
 ssh-add
 
 # Setup git
 git config --global user.email "your.name@example.org"   # Should match one of your emails added in GitHub
 git config --global user.name "Your Name"
 
-# Login to GitHub account and select settings/SSH keys
-# Add new SSH key
+# Copy SSH key and paste it into GitHub
 pbcopy < ~/.ssh/id_rsa.pub
-# Paste key into new SSH key setup in GitHub
+
 # Test that it works
 ssh -T git@github.com
 ~~~
-### Verify that it matches the fingerprints on github page
+### Verify that it matches the fingerprints on GitHub page
 [Test SSH connection to GitHub](https://help.github.com/articles/testing-your-ssh-connection/)
