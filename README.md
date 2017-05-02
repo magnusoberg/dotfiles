@@ -16,6 +16,7 @@ brew cask install iterm2
 cd ~/Downloads
 git clone https://github.com/powerline/fonts.git
 git clone https://github.com/mbadolato/iTerm2-Color-Schemes
+
 cd fonts
 ./install.sh
 cd ..
@@ -24,7 +25,6 @@ rm -rf fonts/
 # Edit $home_systme in .zshrc to equal $HOST
 vim .zshrc
 
-#
 ~~~
 
 ### Configure iTerm2
@@ -38,9 +38,9 @@ vim .zshrc
 - Also in the Profile section, select a new Powerline font.
 - I chose 12pt Meslo LG M Regular
 
-### Setup ssh
+### Setup ssh for GitHub
 ~~~
-# Create a new private/public key
+# Create a new private/public key and store the password somewhere safe
 cd ~
 mkdir -p .ssh
 cd ~/.ssh
