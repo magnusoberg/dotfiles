@@ -51,7 +51,7 @@ ssh-add
 
 # Setup git
 git config --global user.email "your.name@example.org"   # Should match one of your emails added in GitHub
-git config --global user.name "Your Name"
+git config --global user.name  "Your Name"
 
 # Copy SSH key and paste it into GitHub
 pbcopy < ~/.ssh/id_rsa.pub
