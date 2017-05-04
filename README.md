@@ -63,5 +63,6 @@ pbcopy < ~/.ssh/id_rsa.pub
 # Test that it works
 ssh -T git@github.com
 ~~~
-You will not be able to login as you are not allowed to assign a TTY by GitHub. But you will get a greeting message
-welcoming you if you were successful.
+You will not be able to login as you are not allowed to assign a TTY by GitHub. This is why we disable the
+pseudo-terminal allocation above with the `-T` option to ssh. You should receive a greeting welcoming you with your
+username welcoming you if you were successful.
