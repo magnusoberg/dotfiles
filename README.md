@@ -55,9 +55,11 @@ git config --global user.name "Your Name"
 
 # Copy SSH key and paste it into GitHub
 pbcopy < ~/.ssh/id_rsa.pub
+~~~
 
+### Verify SSH fingerprints against GitHub published keys
+[Test SSH connection to GitHub](https://help.github.com/articles/testing-your-ssh-connection/)
+~~~
 # Test that it works
 ssh -T git@github.com
 ~~~
-### Verify that it matches the fingerprints on GitHub page
-[Test SSH connection to GitHub](https://help.github.com/articles/testing-your-ssh-connection/)
