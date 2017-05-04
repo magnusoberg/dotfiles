@@ -478,14 +478,19 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>643 110 731 224 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 183 606 456 0 0 1440 877 </string>
+	<string>269 85 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>292 275 796 473 0 0 1440 900 </string>
+	<string>229 370 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 17 1438 860 0 0 1440 877 </string>
+	<string>0 0 1440 900 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>467 161 570 452 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_E86F4939-5C17-40A9-BA61-09876AC453DA</key>
@@ -1106,7 +1111,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.052006286982248524</real>
+			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -1724,8 +1729,18 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>B9F5E381-92AD-48F1-BC7F-B648A8AC8605</string>
+	<key>NoSyncLastTipTime</key>
+	<real>515579247.79403198</real>
+	<key>NoSyncPermissionToShowTip</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>514876680.48146898</real>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+		<string>0000</string>
+		<string>0001</string>
+	</array>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
 	<key>PointerActions</key>
@@ -1772,7 +1787,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-04-27T11:21:21Z</date>
+	<date>2017-05-03T07:30:14Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>
