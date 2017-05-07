@@ -163,6 +163,10 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'                " enter text+tab to expand dynamic text with preset tabstops etc.
 
+" Vim note-taking plugin
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
+
 " Plug 'altercation/vim-colors-solarized' " Vim specific Solarized theme.
 
 call plug#end()
