@@ -8,9 +8,13 @@ xcode-select --install
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap caskroom/cask
 
-#Install everything
-brew install tmux keychain git jq ag
+#Install everything else needed
+brew install tmux zplug keychain git jq ag python httpie
 brew cask install iterm2
+
+#Install python related items
+pip install ansible
+pip install http-prompt
 
 # Get fonts and colorschemes
 cd ~/Downloads
