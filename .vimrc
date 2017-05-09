@@ -153,8 +153,8 @@ Plug 'sjbach/lusty', has('ruby') ? {} : { 'on': [] }
 Plug 'terryma/vim-multiple-cursors'       " Allows Sublime style multiple cursors!
 Plug 'tomtom/tcomment_vim'
 Plug 'edkolev/tmuxline.vim'               " Will sync tmux look and feel to match vim-airline themes selected.
-" Plug 'vim-airline/vim-airline'            " Prefer this over Powerline as it seems more configurable
-" Plug 'vim-airline/vim-airline-themes'     " Themes are now a separate plugin
+Plug 'vim-airline/vim-airline'            " Prefer this over Powerline as it seems more configurable
+Plug 'vim-airline/vim-airline-themes'     " Themes are now a separate plugin
 Plug 'airblade/vim-gitgutter'             " Show Git changes in the gutter line.
 Plug 'vim-scripts/SyntaxAttr.vim'         " Call SyntaxAttr() to find attibute under cursor.
 
