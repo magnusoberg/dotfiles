@@ -26,6 +26,9 @@ cd fonts
 cd ..
 rm -rf fonts/
 
+# Setup personal environemt
+cd ~
+
 # Edit $home_systme in .zshrc to equal $HOST
 vim .zshrc
 
