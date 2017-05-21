@@ -72,6 +72,29 @@ pbcopy < ~/.ssh/id_rsa.pub
 # Test that it works
 ssh -T git@github.com
 ~~~
-You will not be able to login as you are not allowed to assign a TTY by GitHub. This is why we disable the
-pseudo-terminal allocation above with the `-T` option to ssh. You should receive a greeting welcoming you with your
-username welcoming you if you were successful.
+You will not be able to login as you are not allowed to assign a TTY by GitHub.
+This is why we disable the pseudo-terminal allocation above with the `-T`
+option to ssh. You should receive a greeting welcoming you with your username
+you if you were successful.
+
+### Enable italics in tmux
+As of tmux 2.1, you can enable italics support by setting the default terminal
+to `tmux*` instead of the usual `screen*`. See [tmux
+changelog](https://github.com/tmux/tmux/blob/2.1/FAQ#L355-L383) for more
+details. However, it seems my Mac does not support the `xterm+tmux` or the
+`xterm+256setaf` terminfo. I simply replaced those with the below and it works.
+```
+tmux|tmux terminal multiplexer,
+  ritm=\E[23m, rmso=\E[27m, sitm=\E[3m, smso=\E[7m,
+  use=xterm, use=screen,
+
+tmux-256color|tmux with 256 colors,
+    use=xterm-256color, use=tmux,
+```
+I stored the two entries above in `~/terminfo/` and then run the commands below
+to compile them into `~/.terminfo`
+```
+tic -x tmux.terminfo
+tic -x tmux-256color.terminfo
+```
+
