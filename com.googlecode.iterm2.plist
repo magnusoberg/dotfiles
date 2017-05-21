@@ -484,15 +484,15 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>643 110 731 224 0 0 1440 877 </string>
+	<string>643 106 731 94 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 85 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>229 370 796 473 0 0 1440 877 </string>
+	<string>224 91 937 512 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1440 900 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>467 161 570 452 0 0 1440 877 </string>
+	<string>170 4 1270 792 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_E86F4939-5C17-40A9-BA61-09876AC453DA</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_E86F4939-5C17-40A9-BA61-09876AC453DA_selection</key>
@@ -502,6 +502,18 @@
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>AWDS Pane Directory</key>
+			<string></string>
+			<key>AWDS Pane Option</key>
+			<string>No</string>
+			<key>AWDS Tab Directory</key>
+			<string></string>
+			<key>AWDS Tab Option</key>
+			<string>No</string>
+			<key>AWDS Window Directory</key>
+			<string></string>
+			<key>AWDS Window Option</key>
+			<string>No</string>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -820,6 +832,20 @@
 					<key>Text</key>
 					<string>0x7f</string>
 				</dict>
+				<key>0x62-0x100000</key>
+				<dict>
+					<key>Action</key>
+					<integer>10</integer>
+					<key>Text</key>
+					<string>b</string>
+				</dict>
+				<key>0x66-0x100000</key>
+				<dict>
+					<key>Action</key>
+					<integer>10</integer>
+					<key>Text</key>
+					<string>f</string>
+				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
 					<key>Action</key>
@@ -1069,11 +1095,11 @@
 			<key>Normal Font</key>
 			<string>MesloLGMForPowerline-Regular 12</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Rows</key>
 			<integer>45</integer>
 			<key>Screen</key>
@@ -1125,7 +1151,7 @@
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
-			<true/>
+			<false/>
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
@@ -1730,7 +1756,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>B9F5E381-92AD-48F1-BC7F-B648A8AC8605</string>
 	<key>NoSyncLastTipTime</key>
-	<real>515579247.79403198</real>
+	<real>516171096.92658597</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -1740,7 +1766,13 @@
 		<string>000</string>
 		<string>0000</string>
 		<string>0001</string>
+		<string>0002</string>
+		<string>0003</string>
+		<string>0004</string>
+		<string>0005</string>
 	</array>
+	<key>OnlyWhenMoreTabs</key>
+	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
 	<key>PointerActions</key>
@@ -1778,6 +1810,10 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/karl/dotfiles</string>
+	<key>PromptOnQuit</key>
+	<false/>
+	<key>QuitWhenAllWindowsClosed</key>
+	<false/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -1787,7 +1823,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-05-03T07:30:14Z</date>
+	<date>2017-05-10T13:10:50Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>
