@@ -9,7 +9,9 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew tap caskroom/cask
 
 #Install everything else needed
-brew install tmux zplug keychain git jq ag python httpie
+brew install tmux keychain git jq ag python httpie
+brew install zplug
+brew install reattach-to-user-namespace
 brew cask install iterm2
 
 #Install python related items
