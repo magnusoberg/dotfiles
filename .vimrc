@@ -61,12 +61,25 @@ if has("termguicolors")
     " Allow Vim to display 24 bit truecolor
     set termguicolors
 
-    " Since tmux needs TERM to be set to screen-* the below t_ values need to be set manually
+    " Since tmux needs TERM to be set to screen-* or tmux* the below t_ values need to be set manually
     " as Vim will not recognize anything not xterm-*
     let &t_8f = "[38;2;%lu;%lu;%lum"
     let &t_8b = "[48;2;%lu;%lu;%lum"
 
+    " Disable Background Color Erase (BCE) so colorschemes work properly.
+    " https://sunaku.github.io/vim-256color-bce.html
+    set t_ut=
+
 endif
+
+" Change cursor shape between insert and normal mode in iTerm2.app
+if $TERM_PROGRAM =~ "iTerm"
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+    let &t_SR = "\<Esc>]50;CursorShape=2\x7" " Underline in replace mode
+endif
+" let &t_SI = "\<Esc>[3 q"
+" let &t_EI = "\<Esc>[0 q"
 
 " Default FZF setting
 "set rtp+=/usr/local/opt/fzf
@@ -210,6 +223,8 @@ nmap s <Plug>(easymotion-overwin-f2)
 let g:airline_powerline_fonts = 1
 " let g:airline_theme="bubblegum"
 let g:airline#extensions#tabline#enabled = 0
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
 let g:tmuxline_preset = {
       \'a'    : '#S',
@@ -234,4 +249,10 @@ nnoremap <silent> <Leader>c :call fzf#run({
 " No need to set 'syntax on', or 'filetype plugin indent' etc. as 'Plug' takes
 " care of all that. So all that remains is to select the colorscheme :)
 " Use silent to avoid error being shown if colorscheme does not exist yet
+
 silent! colorscheme jellybeans
+
+" set background=dark
+" hi Normal ctermbg=none
+" hi NonText ctermbg=none
+hi Comment cterm=italic
