@@ -71,7 +71,7 @@ export EDITOR=vim
 
 # Setup run-help to work for internal commands, and not alias for 'man'
 export HELPDIR=/usr/local/share/zsh/help
-unalias run-help 2>/dev/null	# stderr redirection needed in case you re-source your .zshrc file
+unalias run-help 2>/dev/null    # stderr redirection needed in case you re-source your .zshrc file
 autoload run-help
 alias help='run-help'
 
@@ -87,7 +87,7 @@ source "${ZPLUG_HOME}/init.zsh"
 
 # setopt prompt_subst
 
-# zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # zplug "akinjide/chi", as:theme
 # zplug "aaronjamesyoung/aaron-zsh-theme", as:theme, from:oh-my-zsh
