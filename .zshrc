@@ -51,7 +51,7 @@ zstyle :compinstall filename ~/.zshrc
 # End of compinstall }}}
 
 if [[ $HOST == $home_system ]]; then
-    eval $(keychain --eval --agents ssh --inherit any id_rsa)
+    eval $(keychain --eval --agents ssh --inherit any id_rsa --quiet)
 fi
 
 # Source my files
