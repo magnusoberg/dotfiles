@@ -64,6 +64,8 @@ done
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [[ -d ~/bin ]] && path=(~/bin $path)
+path=($path /usr/local/opt/go/libexec/bin)
+export GOPATH=${HOME}/go
 export PATH
 export EDITOR=vim
 
