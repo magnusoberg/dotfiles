@@ -30,10 +30,14 @@ rm -rf fonts/
 
 # Setup personal environemt
 cd ~
+git clone https://github.com/magnusoberg/dotfiles
+mkdir .vim/
+ln -s ~/dotfiles/.vimrc .vim/vimrc
+git clone git@gitlab.com:magobe/private.git
 
-# Edit $home_systme in .zshrc to equal $HOST
+
+# Edit $home_system in .zshrc to equal $HOST
 vim .zshrc
-
 ~~~
 
 ### Configure iTerm2
@@ -46,9 +50,12 @@ vim .zshrc
 - I chose 'Afterglow'
 - Also in the Profile section, select a new Powerline font.
 - I chose 12pt Meslo LG M Regular
+- Should load settings file from dotfiles.
+- Profiles / Keys: set left and right option key to +Esc to allow better navigation at CLI.
+- you can also add Command-f and Command-b by clicking '+' and selecting 'Send Escape Sequence' followed by key.
 
 ### Setup ssh for GitHub
-~~~
+```
 # Create a new private/public key and store the password somewhere safe
 cd ~
 mkdir -p .ssh
@@ -64,7 +71,14 @@ git config --global user.name  "Your Name"
 
 # Copy SSH key and paste it into GitHub
 pbcopy < ~/.ssh/id_rsa.pub
-~~~
+```
+Once SSH keys are added and configured in GitHub, you can change the protocol
+to use SSH keys and the git protocol for your repo instead of HTTPS which will
+always require authentication
+```
+cd dotfiles
+git remote set-url origin git@github.com:magnusoberg/dotfiles
+```
 
 ### Verify SSH fingerprints against GitHub published keys
 [Test SSH connection to GitHub](https://help.github.com/articles/testing-your-ssh-connection/)
