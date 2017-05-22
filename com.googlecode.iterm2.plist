@@ -488,7 +488,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 85 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>224 91 937 512 0 0 1440 877 </string>
+	<string>219 164 918 498 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1440 900 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1135,7 +1135,7 @@
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
-			<string>xterm-256color</string>
+			<string>tmux-256color</string>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
@@ -1756,7 +1756,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>B9F5E381-92AD-48F1-BC7F-B648A8AC8605</string>
 	<key>NoSyncLastTipTime</key>
-	<real>516171096.92658597</real>
+	<real>517035597.37221903</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -1770,6 +1770,11 @@
 		<string>0003</string>
 		<string>0004</string>
 		<string>0005</string>
+		<string>0006</string>
+		<string>0007</string>
+		<string>0008</string>
+		<string>0009</string>
+		<string>0010</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
@@ -1823,7 +1828,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-05-10T13:10:50Z</date>
+	<date>2017-05-21T11:18:52Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>
