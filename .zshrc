@@ -117,6 +117,8 @@ if [[ ! $(uname -s) == "Darwin" ]]; then
 fi
 
 # Common aliases
+# eval $(hub alias -s)
+alias git=hub
 alias gst='git st'
 
 
