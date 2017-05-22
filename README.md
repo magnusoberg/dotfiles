@@ -11,6 +11,8 @@ brew tap caskroom/cask
 #Install everything else needed
 brew install tmux keychain git jq ag python httpie
 brew install zplug
+brew install vim
+brew install hub
 brew install reattach-to-user-namespace
 brew cask install iterm2
 
