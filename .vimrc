@@ -131,6 +131,30 @@ if exists("+undofile")
 endif
 
 
+" Airline settings {{{1
+
+let g:airline_powerline_fonts = 1
+" let g:airline_theme="bubblegum"
+let g:airline#extensions#tabline#enabled = 0
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'win'  : '#I #W#F',
+      \'cwin' : '#I #W#F',
+      \'y'    : '#(uptime |sed "s/^.* up /Up /;s/  / /g;s/load average:/load:/")',
+      \'z'    : '%a %d-%b-%Y %H:%M:%S',
+      \'options' : {'status-justify' : 'left'}}
+
+  let g:tmuxline_separators = {
+      \ 'left' : '',
+      \ 'left_alt': '',
+      \ 'right' : '',
+      \ 'right_alt' : '',
+      \ 'space' : ' '}
+
+
 " Plugins {{{1
 
 " Install 'junegunn/vim-plug' if not already installed & install plugins
@@ -165,9 +189,9 @@ Plug 'mileszs/ack.vim'
 Plug 'sjbach/lusty', has('ruby') ? {} : { 'on': [] }
 Plug 'terryma/vim-multiple-cursors'       " Allows Sublime style multiple cursors!
 Plug 'tomtom/tcomment_vim'
-Plug 'edkolev/tmuxline.vim'               " Will sync tmux look and feel to match vim-airline themes selected.
 Plug 'vim-airline/vim-airline'            " Prefer this over Powerline as it seems more configurable
 Plug 'vim-airline/vim-airline-themes'     " Themes are now a separate plugin
+Plug 'edkolev/tmuxline.vim'               " Will sync tmux look and feel to match vim-airline themes selected.
 Plug 'airblade/vim-gitgutter'             " Show Git changes in the gutter line.
 Plug 'vim-scripts/SyntaxAttr.vim'         " Call SyntaxAttr() to find attibute under cursor.
 
@@ -218,22 +242,6 @@ nmap s <Plug>(easymotion-overwin-f2)
 " " Use remapped 'n' and 'N' when moving around.
 " map  n <Plug>(easymotion-next)
 " map  N <Plug>(easymotion-prev)
-" Airline settings {{{1
-
-let g:airline_powerline_fonts = 1
-" let g:airline_theme="bubblegum"
-let g:airline#extensions#tabline#enabled = 0
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-
-let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'win'  : '#I #W#F',
-      \'cwin' : '#I #W#F',
-      \'y'    : '#(uptime |sed "s/^.* up /Up /;s/  / /g;s/load average:/load:/")',
-      \'z'    : '%a %d-%b-%Y %H:%M:%S',
-      \'options' : {'status-justify' : 'left'}}
-
 " fzf specific tweaks {{{1
 " <leader>c to choose color schemes interactively
 nnoremap <silent> <Leader>c :call fzf#run({
