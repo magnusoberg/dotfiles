@@ -139,6 +139,13 @@ let g:airline#extensions#tabline#enabled = 0
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
+let g:tmuxline_separators = {
+      \ 'left' : '',
+      \ 'left_alt': '',
+      \ 'right' : '',
+      \ 'right_alt' : '',
+      \ 'space' : ' '}
+
 let g:tmuxline_preset = {
       \'a'    : '#S',
       \'win'  : '#I #W#F',
@@ -146,14 +153,6 @@ let g:tmuxline_preset = {
       \'y'    : '#(uptime |sed "s/^.* up /Up /;s/  / /g;s/load average:/load:/")',
       \'z'    : '%a %d-%b-%Y %H:%M:%S',
       \'options' : {'status-justify' : 'left'}}
-
-  let g:tmuxline_separators = {
-      \ 'left' : '',
-      \ 'left_alt': '',
-      \ 'right' : '',
-      \ 'right_alt' : '',
-      \ 'space' : ' '}
-
 
 " Plugins {{{1
 
