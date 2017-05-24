@@ -2,7 +2,7 @@
 
 ## For Mac ##
 
-~~~
+```
 # Install Homebrew
 xcode-select --install
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -40,7 +40,7 @@ git clone git@gitlab.com:magobe/private.git
 
 # Edit $home_system in .zshrc to equal $HOST
 vim .zshrc
-~~~
+```
 
 ### Configure iTerm2
 - start iTerm2
@@ -84,10 +84,10 @@ git remote set-url origin git@github.com:magnusoberg/dotfiles
 
 ### Verify SSH fingerprints against GitHub published keys
 [Test SSH connection to GitHub](https://help.github.com/articles/testing-your-ssh-connection/)
-~~~
+```
 # Test that it works
 ssh -T git@github.com
-~~~
+```
 You will not be able to login as you are not allowed to assign a TTY by GitHub.
 This is why we disable the pseudo-terminal allocation above with the `-T`
 option to ssh. You should receive a greeting welcoming you with your username
