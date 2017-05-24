@@ -20,6 +20,7 @@ brew install zplug
 brew install vim
 brew install hub
 brew install reattach-to-user-namespace
+brew install parallel
 
 brew cask install iterm2
 
