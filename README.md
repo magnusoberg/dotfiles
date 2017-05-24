@@ -14,7 +14,11 @@ brew install zplug
 brew install vim
 brew install hub
 brew install reattach-to-user-namespace
+
 brew cask install iterm2
+
+# Remap UK keyboard tilde and/or Capslock to L_Control
+brew cask install karabiner-elements
 
 #Install python related items
 pip install ansible
