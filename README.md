@@ -9,7 +9,13 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew tap caskroom/cask
 
 #Install everything else needed
-brew install tmux keychain git jq ag python httpie
+brew install tmux
+brew install keychain
+brew install git
+brew install jq
+brew install ag
+brew install python
+brew install httpie
 brew install zplug
 brew install vim
 brew install hub
