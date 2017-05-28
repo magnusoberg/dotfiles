@@ -27,6 +27,8 @@ brew install watch
 # may need to put /usr/local/opt/openssl/bin path first in $PATH
 brew install --force openssl
 
+brew install weechat
+
 brew tap caskroom/cask
 brew cask install iterm2
 
