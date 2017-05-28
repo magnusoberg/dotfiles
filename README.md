@@ -6,7 +6,6 @@
 # Install Homebrew
 xcode-select --install
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew tap caskroom/cask
 
 #Install everything else needed
 brew install tmux
@@ -21,7 +20,14 @@ brew install vim
 brew install hub
 brew install reattach-to-user-namespace
 brew install parallel
+brew install watch
 
+# Use newer version of OpenSSL that supports SNI:
+#   SNI (Server Name Indication) extension in the ClientHello message.
+# may need to put /usr/local/opt/openssl/bin path first in $PATH
+brew install --force openssl
+
+brew tap caskroom/cask
 brew cask install iterm2
 
 # Remap UK keyboard tilde and/or Capslock to L_Control
