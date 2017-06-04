@@ -214,7 +214,7 @@ let g:EasyMotion_do_mapping = 0     " Disable default mappings
 let g:EasyMotion_smartcase  = 1
 
 " Make EasyMotion prefix just <leader> and not <leader><leader>
-map <Leader> <Plug>(easymotion-prefix)
+map <Leader><Leader> <Plug>(easymotion-prefix)
 
 map <Leader>f <Plug>(easymotion-f)
 map <Leader>F <Plug>(easymotion-F)
@@ -234,7 +234,7 @@ map <Leader>n <Plug>(easymotion-n)
 map <Leader>N <Plug>(easymotion-N)
 map <Leader>s <Plug>(easymotion-s)
 " Make 's' search anywhere for two characters (even other windows)
-nmap s <Plug>(easymotion-overwin-f2)
+nmap <Leader>s <Plug>(easymotion-overwin-f2)
 " " Overide Vims built-in '/' search. Use 'tab' and 'shift-tab' to move around.
 " map  / <Plug>(easymotion-sn)
 " omap / <Plug>(easymotion-tn)
