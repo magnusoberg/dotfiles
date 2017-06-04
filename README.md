@@ -21,6 +21,7 @@ brew install hub
 brew install reattach-to-user-namespace
 brew install parallel
 brew install watch
+brew install lastpass-cli
 
 # Use newer version of OpenSSL that supports SNI:
 #   SNI (Server Name Indication) extension in the ClientHello message.
