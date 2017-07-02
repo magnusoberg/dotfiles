@@ -203,6 +203,8 @@ Plug 'garbas/vim-snipmate'                " enter text+tab to expand dynamic tex
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 
+Plug 'vim-syntastic/syntastic'
+
 " Plug 'altercation/vim-colors-solarized' " Vim specific Solarized theme.
 
 call plug#end()
