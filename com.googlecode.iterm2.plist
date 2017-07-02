@@ -910,7 +910,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 357 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>224 304 796 473 0 0 1440 900 </string>
+	<string>224 357 796 473 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 85 1270 792 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1515,7 +1515,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>MesloLGMForPowerline-Regular 12</string>
+			<string>MesloLGMForPowerline-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1551,7 +1551,7 @@
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
-			<false/>
+			<true/>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -2178,7 +2178,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>B9F5E381-92AD-48F1-BC7F-B648A8AC8605</string>
 	<key>NoSyncLastTipTime</key>
-	<real>518184720.65357798</real>
+	<real>518376046.07209402</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -2209,6 +2209,8 @@
 		<string>0019</string>
 		<string>0020</string>
 		<string>0021</string>
+		<string>0022</string>
+		<string>0023</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
@@ -2262,7 +2264,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-06-03T17:22:35Z</date>
+	<date>2017-06-05T17:54:35Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>
