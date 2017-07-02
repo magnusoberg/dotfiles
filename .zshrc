@@ -68,6 +68,7 @@ path=($path /usr/local/opt/go/libexec/bin)
 export GOPATH=${HOME}/go
 export PATH
 export EDITOR=vim
+export GPG_TTY=$(tty)
 
 # Setup run-help to work for internal commands, and not alias for 'man'
 export HELPDIR=/usr/local/share/zsh/help
@@ -120,6 +121,7 @@ fi
 # eval $(hub alias -s)
 alias git=hub
 alias gst='git st'
+alias hd='hexdump -C'
 
 
 #End of file
