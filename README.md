@@ -33,6 +33,7 @@ brew install weechat
 brew tap caskroom/cask
 brew cask install iterm2
 brew cask install telegram
+brew cask install docker
 
 # Remap UK keyboard tilde and/or Capslock to L_Control
 brew cask install karabiner-elements
