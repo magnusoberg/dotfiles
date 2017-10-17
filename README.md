@@ -23,6 +23,16 @@ brew install parallel
 brew install watch
 brew install lastpass-cli
 
+# xsv is a powerful CSV file viewer (and much more). Pipe to 'xsv table' for basic usage.
+brew install xsv
+
+# Install Go and then use it to install json2csv (after setting path)
+brew install go
+#export PATH=$PATH:~/go/bin
+#path=($path ~/go/bin)
+go get github.com/jehiah/json2csv
+rehash
+
 # Use newer version of OpenSSL that supports SNI:
 #   SNI (Server Name Indication) extension in the ClientHello message.
 # may need to put /usr/local/opt/openssl/bin path first in $PATH
@@ -39,8 +49,11 @@ brew cask install docker
 brew cask install karabiner-elements
 
 #Install python related items
+pip install virtualenv
+pip install csvkit
 pip install ansible
 pip install http-prompt
+pip install --user --upgrade awscli
 
 # Get fonts and colorschemes
 cd ~/Downloads
