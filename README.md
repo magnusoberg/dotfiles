@@ -45,6 +45,10 @@ brew cask install iterm2
 brew cask install telegram
 brew cask install docker
 
+# Needed this after a while since, brew stopped working without it.
+brew cask install xcrun
+brew cask install java
+
 # Remap UK keyboard tilde and/or Capslock to L_Control
 brew cask install karabiner-elements
 
