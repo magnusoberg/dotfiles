@@ -8,39 +8,42 @@ export HISTFILE=~/.histfile
 export HISTSIZE=100000        # 100K history lines should be enough
 export SAVEHIST=$HISTSIZE
 
-# Set options {{{
-setopt APPEND_HISTORY
-setopt AUTO_CD
+export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8
+
+# Set options
+# setopt appendhistory
+setopt autocd
+setopt nobeep
 # Treat the '!' character specially during expansion
-setopt BANG_HIST
-setopt EXTENDED_GLOB
+# setopt banghist
+setopt extendedglob
 # Write the history file in the ":start:elapsed;command" format
-setopt EXTENDED_HISTORY
+setopt extendedhistory
 # Expire duplicate entries first when trimming history
-setopt HIST_EXPIRE_DUPS_FIRST
+setopt histexpiredupsfirst
 # Do not display a line previously found.
-setopt HIST_FIND_NO_DUPS
+setopt histfindnodups
 # Delete old recorded entry if new entry is a duplicate.
-setopt HIST_IGNORE_ALL_DUPS
+setopt histignorealldups
 # Dont record an entry that was just recorded again.
-setopt HIST_IGNORE_DUPS
+setopt histignoredups
 # Dont record an entry starting with a space.
-setopt HIST_IGNORE_SPACE
+setopt histignorespace
 # Remove superfluous blanks before recording entry.
-setopt HIST_REDUCE_BLANKS
+setopt histreduceblanks
 # Dont write duplicate entries in the history file.
-setopt HIST_SAVE_NO_DUPS
+setopt histsavenodups
 # Dont execute immediately upon history expansion.
-setopt HIST_VERIFY
+setopt histverify
 # Write to the history file immediately, not when the shell exits.
-setopt INC_APPEND_HISTORY
-# Allow comments on the command line.
-setopt INTERACTIVE_COMMENTS
-setopt NO_BEEP
-setopt NO_MATCH
-setopt NO_NOTIFY
+setopt incappendhistory
+# Interactive Comments - for some weird reason the long option 'interactivecomment' messes up the syntax highlighting
+setopt -k
+# setopt nomatch
+setopt nonotify
+setopt promptsubst
 # Share history between all sessions.
-setopt SHARE_HISTORY
+setopt sharehistory
 
 bindkey -e
 export PS1='%m %~ %# '
@@ -64,7 +67,9 @@ done
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [[ -d ~/bin ]] && path=(~/bin $path)
-path=($path /usr/local/opt/go/libexec/bin)
+
+path=($path /usr/local/opt/go/libexec/bin /Users/magnus/Library/Python/2.7/bin ~/go/bin)
+fpath=($fpath ~/.zsh/funcs)
 export GOPATH=${HOME}/go
 export PATH
 export EDITOR=vim
@@ -76,12 +81,12 @@ unalias run-help 2>/dev/null    # stderr redirection needed in case you re-sourc
 autoload run-help
 alias help='run-help'
 
-# Override FZF defaults
-FZF_CTRL_T_COMMAND="command find -L . -mindepth 1 \\( -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
-    -o -type f -print \
-    -o -type d -print \
-    -o -type l -print 2> /dev/null | cut -b3-"
-
+# # Override FZF defaults
+# export FZF_CTRL_T_COMMAND="command find -L . -mindepth 1 \\( -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
+#     -o -type f -print \
+#     -o -type d -print \
+#     -o -type l -print 2> /dev/null | cut -b3-"
+#
 # Setup zplug
 export ZPLUG_HOME="${HOME}/.zplug"
 source "${ZPLUG_HOME}/init.zsh"
@@ -101,20 +106,26 @@ zplug load
 
 
 # Source tmuxinator completion if it exists
-[[ -f ~/.zsh/completions/tmuxinator.zsh ]] && source ~/.zsh/completions/tmuxinator.zsh
-local files=(~/.zsh/completions/*.zsh-completion) 2>/dev/null
-for f in $files; do
-    source ${f}
-done
+# [[ -f ~/.zsh/completions/tmuxinator.zsh ]] && source ~/.zsh/completions/tmuxinator.zsh
+# local files=(~/.zsh/completions/*.zsh-completion)
+# for f in $files; do
+#     source ${f}
+# done
+
+# AWS Cli tools...
+[[ -d ~/Library/Python/2.7/bin ]] && path=($path ~/Library/Python/2.7/bin)
+[[ -f ~/Library/Python/2.7/bin/aws_zsh_completer.sh ]] && source ~/Library/Python/2.7/bin/aws_zsh_completer.sh
 
 # Source iTerm integration files if they exist
 # I should review these fucntions in more detail at some time
 [[ -e "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
 
-alias ll='ls -lah'
 alias ls='ls -GF'
+alias ll='ls -lah'
+
 if [[ ! $(uname -s) == "Darwin" ]]; then
     alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
 fi
 
 # Common aliases
@@ -123,5 +134,6 @@ alias git=hub
 alias gst='git st'
 alias hd='hexdump -C'
 
+alias nl='nl -s ". " -w 3'
 
 #End of file

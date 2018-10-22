@@ -47,6 +47,8 @@ set updatetime=250             " Recommended setting from vim-gitgutter
 set previewheight=25           " Fugitive Gstatus window is a bit small by default
 set scrolloff=5                " Scroll offset for top/bottom of window
 
+set clipboard=unnamed           " Allow yanking to system clipboard
+
 " Note 'tab' won't be visible unless set noexpandtab
 " You need to set list for listchars to be visible.
 set list listchars=eol:↲,tab:▶\ ,nbsp:␣,extends:…,trail:•
@@ -68,7 +70,7 @@ if has("termguicolors")
 
     " Disable Background Color Erase (BCE) so colorschemes work properly.
     " https://sunaku.github.io/vim-256color-bce.html
-    set t_ut=
+    " set t_ut=
 
 endif
 
@@ -86,7 +88,8 @@ endif
 let $FZF_DEFAULT_COMMAND='find . -type f -o -type l|grep -v ''.git/''|cut -b3-'
 
 " Always show the gitgutter column to avoid screen moving when it appears
-let g:gitgutter_sign_column_always = 1
+" let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 
 " Directory management (backup, undo, swap) {{{1
 " Save your backups to a less annoying place than the current directory.
@@ -139,20 +142,20 @@ let g:airline#extensions#tabline#enabled = 0
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
-let g:tmuxline_separators = {
-      \ 'left' : '',
-      \ 'left_alt': '',
-      \ 'right' : '',
-      \ 'right_alt' : '',
-      \ 'space' : ' '}
-
-let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'win'  : '#I #W#F',
-      \'cwin' : '#I #W#F',
-      \'y'    : '#(uptime |sed "s/^.* up /Up /;s/  / /g;s/load average:/load:/")',
-      \'z'    : '%a %d-%b-%Y %H:%M:%S',
-      \'options' : {'status-justify' : 'left'}}
+" let g:tmuxline_separators = {
+"       \ 'left' : '',
+"       \ 'left_alt': '',
+"       \ 'right' : '',
+"       \ 'right_alt' : '',
+"       \ 'space' : ' '}
+"
+" let g:tmuxline_preset = {
+"       \'a'    : '#S',
+"       \'win'  : '#I #W#F',
+"       \'cwin' : '#I #W#F',
+"       \'y'    : '#(uptime |sed "s/^.* up /Up /;s/  / /g;s/load average:/load:/")',
+"       \'z'    : '%a %d-%b-%Y %H:%M:%S',
+"       \'options' : {'status-justify' : 'left'}}
 
 " Plugins {{{1
 
@@ -190,7 +193,10 @@ Plug 'terryma/vim-multiple-cursors'       " Allows Sublime style multiple cursor
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-airline/vim-airline'            " Prefer this over Powerline as it seems more configurable
 Plug 'vim-airline/vim-airline-themes'     " Themes are now a separate plugin
-Plug 'edkolev/tmuxline.vim'               " Will sync tmux look and feel to match vim-airline themes selected.
+
+" Disabled because I became annoyed at tmuxline changing the color of the
+" divider lines of tmux panes. They became too dark and almost not visible.
+" Plug 'edkolev/tmuxline.vim'               " Will sync tmux look and feel to match vim-airline themes selected.
 Plug 'airblade/vim-gitgutter'             " Show Git changes in the gutter line.
 Plug 'vim-scripts/SyntaxAttr.vim'         " Call SyntaxAttr() to find attibute under cursor.
 
