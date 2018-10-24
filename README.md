@@ -23,6 +23,15 @@ brew install parallel
 brew install watch
 brew install lastpass-cli
 
+brew install gnu-sed
+brew install gawk
+brew install ossp-uuid autoconf automake pkg-config coreutils bash
+brew install kubernetes-cli
+brew install cowsay
+brew install mongodb
+brew install osquery
+brew install pwgen
+
 # xsv is a powerful CSV file viewer (and much more). Pipe to 'xsv table' for basic usage.
 brew install xsv
 
@@ -44,6 +53,7 @@ brew tap caskroom/cask
 brew cask install iterm2
 brew cask install telegram
 brew cask install docker
+brew cask install visual-studio-code
 
 # Needed this after a while since, brew stopped working without it.
 brew cask install xcrun
