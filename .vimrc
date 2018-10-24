@@ -271,3 +271,9 @@ silent! colorscheme jellybeans
 " hi Normal ctermbg=none
 " hi NonText ctermbg=none
 hi Comment cterm=italic
+
+
+" vim-gitgutter tweaks:
+" Realtime updates stopped working, fixed by following:
+"   https://github.com/airblade/vim-gitgutter/issues/490#issuecomment-369270014
+let g:gitgutter_terminal_reports_focus = 0
