@@ -2,26 +2,46 @@
 
 ## For Mac ##
 
-```
+```zsh
 # Install Homebrew
 xcode-select --install
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-#Install everything else needed
+# Install everything else needed
 brew install tmux
+
+# funtoo keychain for ssh agent
 brew install keychain
+
 brew install git
+
+# Git + Hub = GitHub cli!
+# Don't forget to check if hub is properly aliased in .zshrc
+brew install hub
+
+# Awesome json query tool
 brew install jq
+
+# The Silver Searcher - faster than grep and ack
 brew install ag
 brew install python
 brew install httpie
 brew install zplug
 brew install vim
-brew install hub
-brew install reattach-to-user-namespace
+brew install reattach-to-user-namespace # Not sure if this is needed anymore
 brew install parallel
 brew install watch
 brew install lastpass-cli
+brew install shuf
+brew install unrar
+brew install pv                         # process viewer
+brew install node                       # Node.js
+brew install nmap
+brew install weechat
+
+# Doesn't work well on Mac..
+# brew install mtr
+# brew install apg #doesn't seem to exist anymore
 
 brew install gnu-sed
 brew install gawk
@@ -30,7 +50,7 @@ brew install kubernetes-cli
 brew install cowsay
 brew install mongodb
 brew install osquery
-brew install pwgen
+#brew install pwgen
 
 # xsv is a powerful CSV file viewer (and much more). Pipe to 'xsv table' for basic usage.
 brew install xsv
@@ -47,13 +67,13 @@ rehash
 # may need to put /usr/local/opt/openssl/bin path first in $PATH
 brew install --force openssl
 
-brew install weechat
-
 brew tap caskroom/cask
 brew cask install iterm2
 brew cask install telegram
 brew cask install docker
 brew cask install visual-studio-code
+brew cask install slack
+brew cask install gdrive
 
 # Needed this after a while since, brew stopped working without it.
 brew cask install xcrun
@@ -91,7 +111,8 @@ git clone git@gitlab.com:magobe/private.git
 vim .zshrc
 ```
 
-### Configure iTerm2
+### Configure iTerm2 ###
+
 - start iTerm2
 - create new profile
 - make new profile the default and drag it first in the order to avoid accidentally changing the default in future.
@@ -105,8 +126,9 @@ vim .zshrc
 - Profiles / Keys: set left and right option key to +Esc to allow better navigation at CLI.
 - you can also add Command-f and Command-b by clicking '+' and selecting 'Send Escape Sequence' followed by key.
 
-### Setup ssh for GitHub
-```
+### Setup ssh for GitHub ###
+
+```zsh
 # Create a new private/public key and store the password somewhere safe
 cd ~
 mkdir -p .ssh
@@ -123,32 +145,39 @@ git config --global user.name  "Your Name"
 # Copy SSH key and paste it into GitHub
 pbcopy < ~/.ssh/id_rsa.pub
 ```
+
 Once SSH keys are added and configured in GitHub, you can change the protocol
 to use SSH keys and the git protocol for your repo instead of HTTPS which will
 always require authentication
-```
+
+```zsh
 cd dotfiles
 git remote set-url origin git@github.com:magnusoberg/dotfiles
 ```
 
-### Verify SSH fingerprints against GitHub published keys
+### Verify SSH fingerprints against GitHub published keys ###
+
 [Test SSH connection to GitHub](https://help.github.com/articles/testing-your-ssh-connection/)
-```
+
+```zsh
 # Test that it works
 ssh -T git@github.com
 ```
+
 You will not be able to login as you are not allowed to assign a TTY by GitHub.
 This is why we disable the pseudo-terminal allocation above with the `-T`
 option to ssh. You should receive a greeting welcoming you with your username
 you if you were successful.
 
-### Enable italics in tmux
+### Enable italics in tmux ###
+
 As of tmux 2.1, you can enable italics support by setting the default terminal
 to `tmux*` instead of the usual `screen*`. See [tmux
 changelog](https://github.com/tmux/tmux/blob/2.1/FAQ#L355-L383) for more
 details. However, it seems my Mac does not support the `xterm+tmux` or the
 `xterm+256setaf` terminfo. I simply replaced those with the below and it works.
-```
+
+```zsh
 tmux|tmux terminal multiplexer,
   ritm=\E[23m, rmso=\E[27m, sitm=\E[3m, smso=\E[7m,
   use=xterm, use=screen,
@@ -156,10 +185,11 @@ tmux|tmux terminal multiplexer,
 tmux-256color|tmux with 256 colors,
     use=xterm-256color, use=tmux,
 ```
+
 I stored the two entries above in `~/terminfo/` and then run the commands below
 to compile them into `~/.terminfo`
-```
+
+```zsh
 tic -x tmux.terminfo
 tic -x tmux-256color.terminfo
 ```
-
