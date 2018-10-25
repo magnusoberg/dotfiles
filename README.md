@@ -22,6 +22,12 @@ brew install hub
 # Awesome json query tool
 brew install jq
 
+# json incremental digger.. nice, but jiq below is even nicer!
+brew install jid
+
+# jid with jq
+go get github.com/fiatjaf/jiq/cmd/jiq
+
 # The Silver Searcher - faster than grep and ack
 brew install ag
 brew install python
