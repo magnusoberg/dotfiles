@@ -10,6 +10,11 @@ export SAVEHIST=$HISTSIZE
 
 export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8
 
+# Make forward/back movements with paths respect WORDCHARS
+# for some reason it needs to be near the top of the .zshrc file.
+autoload -U select-word-style
+select-word-style bash
+
 # Set options
 # setopt appendhistory
 setopt autocd
