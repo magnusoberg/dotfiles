@@ -129,11 +129,14 @@ if [[ ! $(uname -s) == "Darwin" ]]; then
 fi
 
 # Common aliases
-# eval $(hub alias -s)
+
+# alias git to hub so that it can intercept new hub commands easily
+# suggested used: 'eval $(hub alias -s)' or 'eval $(hub alias -s zsh)'
+# but probably easier to just to it directly
 alias git=hub
+
 alias gst='git st'
 alias hd='hexdump -C'
-
 alias nl='nl -s ". " -w 3'
 
 #End of file
