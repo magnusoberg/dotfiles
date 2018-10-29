@@ -19,17 +19,16 @@ brew install git
 # Don't forget to check if hub is properly aliased in .zshrc
 brew install hub
 
-# Awesome json query tool
+# Awesome json query tools
 brew install jq
+brew install jid                      # json incremental digger.. nice, but jiq below is even nicer!
+go get github.com/fiatjaf/jiq/cmd/jiq # uses jq syntax in filter
 
-# json incremental digger.. nice, but jiq below is even nicer!
-brew install jid
+# Install faster search tools than grep and Ack
+brew install ag                       # Silver searcher - better than Ack
+brew install pt                       # platinum searcher - better than ag
+brew install rg                       # ripgrep - better than pt
 
-# jid with jq
-go get github.com/fiatjaf/jiq/cmd/jiq
-
-# The Silver Searcher - faster than grep and ack
-brew install ag
 brew install python
 brew install httpie
 brew install zplug
