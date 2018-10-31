@@ -48,9 +48,12 @@ brew install weechat
 # brew install mtr
 # brew install apg #doesn't seem to exist anymore
 
+# Install GNU utilities ('g' prefixed for Mac)
+brew install grep
 brew install gnu-sed
 brew install gawk
 brew install ossp-uuid autoconf automake pkg-config coreutils bash
+
 brew install kubernetes-cli
 brew install cowsay
 brew install mongodb
