@@ -266,12 +266,30 @@ nnoremap <silent> <Leader>c :call fzf#run({
 " care of all that. So all that remains is to select the colorscheme :)
 " Use silent to avoid error being shown if colorscheme does not exist yet
 
+function! MyHighlights() abort
+    hi SignColumn             guibg=NONE
+    hi NonText                guibg=NONE
+    hi Normal                 guibg=NONE
+    hi LineNr                 guibg=NONE
+    hi StatusLine             guibg=NONE
+    hi Comment                guibg=NONE cterm=italic
+    hi vimComment             guibg=NONE cterm=italic
+    hi vimLineComment         guibg=NONE cterm=italic
+    hi Folded                 guibg=NONE
+    hi GitGutterAddDefault    guibg=NONE
+    hi GitGutterDeleteDefault guibg=NONE
+    hi GitGutterChangeDefault guibg=NONE
+endfunction
+
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme * call MyHighlights()
+augroup END
+
 silent! colorscheme jellybeans
 
 " set background=dark
 " hi Normal ctermbg=none
-" hi NonText ctermbg=none
-hi Comment cterm=italic
 
 
 " vim-gitgutter tweaks:
