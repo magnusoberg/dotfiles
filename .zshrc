@@ -54,8 +54,10 @@ setopt histsavenodups
 setopt histverify
 # Write to the history file immediately, not when the shell exits.
 setopt incappendhistory
-# Interactive Comments - for some weird reason the long option 'interactivecomment' messes up the syntax highlighting
-setopt -k
+
+# Allow comments at the end of command lines
+setopt INTERACTIVE_COMMENTS
+
 # setopt nomatch
 setopt nonotify
 setopt promptsubst
