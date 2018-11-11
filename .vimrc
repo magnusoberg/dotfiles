@@ -276,6 +276,7 @@ function! MyHighlights() abort
     hi vimComment             guibg=NONE cterm=italic
     hi vimLineComment         guibg=NONE cterm=italic
     hi Folded                 guibg=NONE
+    hi FoldColumn             guibg=NONE
     hi GitGutterAddDefault    guibg=NONE
     hi GitGutterDeleteDefault guibg=NONE
     hi GitGutterChangeDefault guibg=NONE
