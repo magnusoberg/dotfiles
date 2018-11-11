@@ -10,10 +10,22 @@ export SAVEHIST=$HISTSIZE
 
 export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8
 
+# Emacs style
+bindkey -e
 # Make forward/back movements with paths respect WORDCHARS
 # for some reason it needs to be near the top of the .zshrc file.
 autoload -U select-word-style
 select-word-style bash
+
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# Emacs style
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+# Vi style:
+# zle -N edit-command-line
+# bindkey -M vicmd v edit-command-line
 
 # Set options
 # setopt appendhistory
