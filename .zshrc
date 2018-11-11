@@ -62,7 +62,6 @@ setopt promptsubst
 # Share history between all sessions.
 setopt sharehistory
 
-bindkey -e
 export PS1='%m %~ %# '
 
 # Added by compinstall {{{
