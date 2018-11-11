@@ -51,7 +51,8 @@ set clipboard=unnamed           " Allow yanking to system clipboard
 
 " Note 'tab' won't be visible unless set noexpandtab
 " You need to set list for listchars to be visible.
-set list listchars=eol:↲,tab:▶\ ,nbsp:␣,extends:…,trail:•
+" set list listchars=eol:↲,tab:▶\ ,nbsp:␣,extends:…,trail:•
+set list listchars=tab:▶\ ,nbsp:␣,extends:…,trail:•
 
 set foldmethod=marker " Use marks for folding... not syntax
 set foldcolumn=1      " I don't use nested folding much, so 1 column should be plenty
