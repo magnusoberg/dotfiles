@@ -24,6 +24,9 @@ brew install jq
 brew install jid                      # json incremental digger.. nice, but jiq below is even nicer!
 go get github.com/fiatjaf/jiq/cmd/jiq # uses jq syntax in filter
 
+# pup is similar to jq, but for HTML intead of JSON
+brew install pup
+
 # Install faster search tools than grep and Ack
 brew install ag                       # Silver searcher - better than Ack
 brew install pt                       # platinum searcher - better than ag
