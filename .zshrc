@@ -84,7 +84,7 @@ done
 
 [[ -d ~/bin ]] && path=(~/bin $path)
 
-path=($path /usr/local/opt/go/libexec/bin /Users/magnus/Library/Python/2.7/bin ~/go/bin)
+path=($path /usr/local/opt/go/libexec/bin /Users/magnus/Library/Python/2.7/bin ~/go/bin /Users/magnus/Library/Python/3.7/bin)
 fpath=($fpath ~/.zsh/funcs)
 export GOPATH=${HOME}/go
 export PATH
