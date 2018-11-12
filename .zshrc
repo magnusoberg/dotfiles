@@ -98,11 +98,17 @@ done
 
 [[ -d ~/bin ]] && path=(~/bin $path)
 
-path=($path /usr/local/opt/go/libexec/bin /Users/magnus/Library/Python/2.7/bin ~/go/bin /Users/magnus/Library/Python/3.7/bin)
-fpath=($fpath ~/.zsh/funcs)
+# File paths
+path=( $path /usr/local/opt/go/libexec/bin /Users/magnus/Library/Python/2.7/bin ~/go/bin /Users/magnus/Library/Python/3.7/bin )
+
+# Function paths
+fpath=( /usr/local/share/zsh-completions $fpath ~/.zsh/funcs )
+
 export GOPATH=${HOME}/go
 export PATH
 export EDITOR=vim
+
+# Needed for GNU PGP to be able to prompt for password somehow..
 export GPG_TTY=$(tty)
 
 # Setup run-help to work for internal commands, and not alias for 'man'
