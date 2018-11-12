@@ -2,6 +2,8 @@
 
 ## For Mac ##
 
+Things might not be in the correct order below. Beware of dependencies!
+
 ```zsh
 # Install Homebrew
 xcode-select --install
