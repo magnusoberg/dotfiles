@@ -272,7 +272,7 @@ function! MyHighlights() abort
     hi Normal                 guibg=NONE
     hi LineNr                 guibg=NONE
     hi StatusLine             guibg=NONE
-    hi Comment                guibg=NONE cterm=italic guifg=#404040
+    hi Comment                guibg=NONE cterm=italic guifg=#808080
     hi vimComment             guibg=NONE cterm=italic guifg=#808080
     hi vimLineComment         guibg=NONE cterm=italic guifg=#808080
     hi Folded                 guibg=NONE
