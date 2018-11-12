@@ -19,10 +19,14 @@ brew install git
 # Don't forget to check if hub is properly aliased in .zshrc
 brew install hub
 
-# Awesome json query tools
+# Awesome json query tool
 brew install jq
-brew install jid                      # json incremental digger.. nice, but jiq below is even nicer!
-go get github.com/fiatjaf/jiq/cmd/jiq # uses jq syntax in filter
+
+# json incremental digger.. nice, but jiq below is even nicer!
+brew install jid
+
+# jiq uses jq syntax in filter
+go get github.com/fiatjaf/jiq/cmd/jiq
 
 # pup is similar to jq, but for HTML intead of JSON
 brew install pup
@@ -31,37 +35,47 @@ brew install htop
 brew install tig
 brew install fasd
 
+# Don't use the built-in zsh - get the latest and greatest!
+brew install zsh zsh-completions
+
+# ncurses based directory usage tool
+brew install ncdu
+
 # Install faster search tools than grep and Ack
-brew install ag                       # Silver searcher - better than Ack
-brew install pt                       # platinum searcher - better than ag
-brew install rg                       # ripgrep - better than pt
+brew install ag            # Silver searcher   - better than Ack
+brew install pt            # platinum searcher - better than ag
+brew install rg            # ripgrep           - better than pt
 
 brew install python
 brew install httpie
 brew install zplug
 brew install vim
-brew install reattach-to-user-namespace # Not sure if this is needed anymore
+
+# Not sure if this is needed anymore
+#brew install reattach-to-user-namespace
 brew install parallel
 brew install watch
 brew install lastpass-cli
 brew install shuf
 brew install unrar
-brew install pv                         # process viewer
-brew install node                       # Node.js
+brew install pv            # process viewer
+brew install node          # Node.js
 brew install nmap
 brew install weechat
 
 # Doesn't work well on Mac..
 # brew install mtr
-# brew install apg #doesn't seem to exist anymore
+# brew install apg         # doesn't seem to exist anymore
 
 # Install GNU utilities ('g' prefixed for Mac)
 brew install grep
 brew install gnu-sed
 brew install gawk
 brew install ossp-uuid autoconf automake pkg-config coreutils bash
+brew install tree
 
 brew install kubernetes-cli
+#brew install vault
 brew install cowsay
 brew install mongodb
 brew install osquery
@@ -69,6 +83,11 @@ brew install osquery
 
 # xsv is a powerful CSV file viewer (and much more). Pipe to 'xsv table' for basic usage.
 brew install xsv
+
+# Install some nice Node.js npm packages
+npm install -g gtop        # text-based system monitor
+npm install -g html-cli    # format HTML text
+npm install -g uglify-js   # beautify JavaScript (good for minified content)
 
 # Install Go and then use it to install json2csv (after setting path)
 brew install go
@@ -89,6 +108,7 @@ brew cask install docker
 brew cask install visual-studio-code
 brew cask install slack
 brew cask install gdrive
+brew cask install 1password
 
 # Needed this after a while since, brew stopped working without it.
 brew cask install xcrun
