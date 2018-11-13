@@ -1,9 +1,6 @@
 # .zshrc file
 # Author: Magnus Oberg
 
-# Define $home_system variable to conditionally run certain items only on the home system
-local home_system='Magnus.local'
-
 export HISTFILE=~/.histfile
 export HISTSIZE=100000        # 100K history lines should be enough
 export SAVEHIST=$HISTSIZE
@@ -27,7 +24,7 @@ bindkey '^x^e' edit-command-line
 # zle -N edit-command-line
 # bindkey -M vicmd v edit-command-line
 
-# Set options
+# {{{ Set options
 # setopt appendhistory
 setopt autocd
 setopt nobeep
@@ -63,6 +60,7 @@ setopt nonotify
 setopt promptsubst
 # Share history between all sessions.
 setopt sharehistory
+# }}}
 
 export PS1='%m %~ %# '
 
@@ -71,7 +69,8 @@ zstyle :compinstall filename ~/.zshrc
 # Used to also include calls to compinit - removed due to zplug calling this
 # End of compinstall }}}
 
-if [[ $HOST == $home_system ]]; then
+# Only run this on my 'local' machine - no remote machines.
+if [[ $HOST == 'Magnus.local' ]]; then
     eval $(keychain --eval --agents ssh --inherit any id_rsa --quiet)
 fi
 
