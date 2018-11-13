@@ -81,17 +81,15 @@ for f in $files; do
     source ${f}
 done
 
-# FASD sepcific settings
+# {{{ FASD initialization
 # Below is command inserted by 'fasd --init auto'
-{ if [ "$ZSH_VERSION" ] && compctl; then # zsh
-    eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install \
-      zsh-wcomp zsh-wcomp-install)"
-  elif [ "$BASH_VERSION" ] && complete; then # bash
-    eval "$(fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install)"
-  else # posix shell
-    eval "$(fasd --init posix-alias posix-hook)"
-  fi
-} >> "/dev/null" 2>&1
+local fasd_cache="${HOME}/.zsh/fasd-init.sh"
+if [[ "$(command -v fasd)" -nt "${fasd_cache}" || ! -s "${fasd_cache}" ]]; then
+    fasd --init auto >| "${fasd_cache}"
+fi
+source "${fasd_cache}"
+unset fasd_cache
+# }}}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
