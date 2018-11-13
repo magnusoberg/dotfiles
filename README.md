@@ -40,8 +40,9 @@ brew install fasd
 # Don't use the built-in zsh - get the latest and greatest!
 brew install zsh zsh-completions
 
-# ncurses based directory usage tool
+# ncurses based directory usage tools
 brew install ncdu
+brew install mc     # Midnight commander
 
 # Install faster search tools than grep and Ack
 brew install ag            # Silver searcher   - better than Ack
