@@ -154,7 +154,7 @@ zplug load
 
 # Source iTerm integration files if they exist
 # I should review these fucntions in more detail at some time
-[[ -e "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
+# [[ -e "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
 
 alias ls='ls -GF'
 alias ll='ls -lah'
