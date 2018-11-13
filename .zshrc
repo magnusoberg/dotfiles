@@ -133,9 +133,9 @@ alias help='run-help'
 #     -o -type d -print \
 #     -o -type l -print 2> /dev/null | cut -b3-"
 #
-# Setup zplug
-export ZPLUG_HOME="${HOME}/.zplug"
-source "${ZPLUG_HOME}/init.zsh"
+# {{{ Setup zplug
+export ZPLUG_HOME="$HOME/.zplug"
+source "$ZPLUG_HOME/init.zsh"
 
 # setopt prompt_subst
 
@@ -149,6 +149,7 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 zplug check || zplug install
 zplug load
+# }}}
 
 
 # Source tmuxinator completion if it exists
