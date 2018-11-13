@@ -65,8 +65,17 @@ setopt sharehistory
 export PS1='%m %~ %# '
 
 # Added by compinstall {{{
+
+# Seems I need to run this here in order to get completion running properly.
+# Used to rely on zplug, but this was not sufficient, as I couldn't get word completion for FASD working without this.
+autoload -Uz compinit && compinit
+
+# Don't know what this does actually - was added by compinstall somehow
 zstyle :compinstall filename ~/.zshrc
-# Used to also include calls to compinit - removed due to zplug calling this
+
+# enable menu selection for completion system
+zstyle ':completion:*' menu select
+
 # End of compinstall }}}
 
 # Only run this on my 'local' machine - no remote machines.
