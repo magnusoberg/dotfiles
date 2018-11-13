@@ -98,10 +98,21 @@ done
 [[ -d ~/bin ]] && path=(~/bin $path)
 
 # File paths
-path=( $path /usr/local/opt/go/libexec/bin /Users/magnus/Library/Python/2.7/bin ~/go/bin /Users/magnus/Library/Python/3.7/bin )
+path=(
+  $path
+  /usr/local/opt/go/libexec/bin
+  /Users/magnus/Library/Python/2.7/bin
+  ~/go/bin
+  /Users/magnus/Library/Python/3.7/bin
+  /usr/local/sbin
+)
 
 # Function paths
-fpath=( /usr/local/share/zsh-completions $fpath ~/.zsh/funcs )
+fpath=(
+  $fpath
+  /usr/local/share/zsh-completions
+  ~/.zsh/funcs
+)
 
 export GOPATH=${HOME}/go
 export PATH
