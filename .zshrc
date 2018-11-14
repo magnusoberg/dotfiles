@@ -108,12 +108,15 @@ unset fasd_cache
 [[ -d ~/bin ]] && path=(~/bin $path)
 
 # File paths
+# Some paths are already set: checkout /etc/zprofile, /etc/paths, /etc/paths.d etc.
+#   also /usr/libexec/path_helper -s uses some of the above to pre-generate paths
 path=(
-  $path
-  /usr/local/opt/go/libexec/bin
-  /Users/magnus/Library/Python/2.7/bin
-  ~/go/bin
-  /Users/magnus/Library/Python/3.7/bin
+  $path                                # Don't overwrite existing paths
+  /usr/local/opt/go/libexec/bin        # Go installation path
+  ~/go/bin                             # Needed by Go
+  ~/MyStupidPath
+  /Users/magnus/Library/Python/2.7/bin # Python 2.7
+  /Users/magnus/Library/Python/3.7/bin # Python3
   /usr/local/sbin
 )
 
