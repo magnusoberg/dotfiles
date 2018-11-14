@@ -102,9 +102,10 @@ fi
 source "${fasd_cache}"
 unset fasd_cache
 # }}}
-
+# Source fzf shell settings if file exists
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Add ~/bin to the path if it exists
 [[ -d ~/bin ]] && path=(~/bin $path)
 
 # File paths
