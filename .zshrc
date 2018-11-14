@@ -5,10 +5,13 @@ export HISTFILE=~/.histfile
 export HISTSIZE=100000        # 100K history lines should be enough
 export SAVEHIST=$HISTSIZE
 
-export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8
+# Don't know why these were explicitly set. Leaving them unset until I can figure out why
+# export LC_ALL=en_US.UTF-8
+# export LANG=en_US.UTF-8
 
 # Emacs style
 bindkey -e
+
 # Make forward/back movements with paths respect WORDCHARS
 # for some reason it needs to be near the top of the .zshrc file.
 autoload -U select-word-style
