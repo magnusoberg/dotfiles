@@ -44,6 +44,10 @@ brew install zsh zsh-completions
 brew install ncdu
 brew install mc     # Midnight commander
 
+# Install youtube downloader and vlc for background videos
+brew install youtube-dl
+brew cask install vlc
+
 # Install faster search tools than grep and Ack
 brew install ag            # Silver searcher   - better than Ack
 brew install pt            # platinum searcher - better than ag
