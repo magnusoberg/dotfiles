@@ -84,7 +84,7 @@ endif
 " let &t_SI = "\<Esc>[3 q"
 " let &t_EI = "\<Esc>[0 q"
 
-" Default FZF setting
+" Default FZF setting: if you had used Homebrew to install fzf
 "set rtp+=/usr/local/opt/fzf
 let $FZF_DEFAULT_COMMAND='find . -type f -o -type l|grep -v ''.git/''|cut -b3-'
 
@@ -168,43 +168,52 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
+" fzf is not really a vim plugin, but fzf.vim will need it installed in order to run properly
+" Could simply use: Plug '~/.fzf' to reference the binary, but the below will install fzf if missing.
+" It will also allow vim to auto-update OS version using :PlugUpdate
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'                   " Seems to have problems this way. Simply works with .fzf added to rtp
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
+
 " Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-scriptease'               " Allow K to lookup vim language features in help. Lots of other things too, but this is the main thing I use it for.
+
+Plug 'vim-scripts/visualrepeat'         " recommended by vim-easy-align to repeat alignments on visual selections
+
+" Allow 'K' to lookup vim language features in help
+Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-abolish'
+
 " Plug 'chriskempson/base16-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'flazz/vim-colorschemes'
-Plug 'godlygeek/tabular'                  " Allow alignment based on a pattern/character
-" Plug 'guns/xterm-color-table.vim'       " Enables XtermColorTable command. Press # to yank, t to toggle RGB, f to set fg
+Plug 'godlygeek/tabular'                " Allow alignment based on a pattern/character
+" Plug 'guns/xterm-color-table.vim'     " Enables XtermColorTable command. Press # to yank, t to toggle RGB, f to set fg
 Plug 'mileszs/ack.vim'
-" Plug 'PProvost/vim-ps1'                 " PowerShell syntax coloring
+" Plug 'PProvost/vim-ps1'               " PowerShell syntax coloring
 
 " Lusty requires Ruby to work
 " Use 'Plug' syntax for conditionally loading only if support is there.
 " Avoids a problem with PlugClean removing bundle if not supported.
 " See https://github.com/junegunn/vim-plug/wiki/faq for more details
 Plug 'sjbach/lusty', has('ruby') ? {} : { 'on': [] }
-Plug 'terryma/vim-multiple-cursors'       " Allows Sublime style multiple cursors!
+Plug 'terryma/vim-multiple-cursors'     " Allows Sublime style multiple cursors!
 Plug 'tomtom/tcomment_vim'
-Plug 'vim-airline/vim-airline'            " Prefer this over Powerline as it seems more configurable
-Plug 'vim-airline/vim-airline-themes'     " Themes are now a separate plugin
+Plug 'vim-airline/vim-airline'          " Prefer this over Powerline as it seems more configurable
+Plug 'vim-airline/vim-airline-themes'   " Themes are now a separate plugin
 
 " Disabled because I became annoyed at tmuxline changing the color of the
 " divider lines of tmux panes. They became too dark and almost not visible.
-" Plug 'edkolev/tmuxline.vim'               " Will sync tmux look and feel to match vim-airline themes selected.
-Plug 'airblade/vim-gitgutter'             " Show Git changes in the gutter line.
-Plug 'vim-scripts/SyntaxAttr.vim'         " Call SyntaxAttr() to find attibute under cursor.
+" Plug 'edkolev/tmuxline.vim'           " Will sync tmux look and feel to match vim-airline themes selected.
+Plug 'airblade/vim-gitgutter'           " Show Git changes in the gutter line.
+Plug 'vim-scripts/SyntaxAttr.vim'       " Call SyntaxAttr() to find attibute under cursor.
 
 " Required by vim-snipmate
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'                " enter text+tab to expand dynamic text with preset tabstops etc.
+Plug 'garbas/vim-snipmate'              " enter text+tab to expand dynamic text with preset tabstops etc.
 
 " Vim note-taking plugin
 Plug 'xolox/vim-notes'
@@ -212,7 +221,8 @@ Plug 'xolox/vim-misc'
 
 Plug 'vim-syntastic/syntastic'
 
-" Plug 'altercation/vim-colors-solarized' " Vim specific Solarized theme.
+" Vim specific Solarized theme
+" Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
@@ -250,7 +260,7 @@ nmap <Leader>s <Plug>(easymotion-overwin-f2)
 " " Use remapped 'n' and 'N' when moving around.
 " map  n <Plug>(easymotion-next)
 " map  N <Plug>(easymotion-prev)
-" fzf specific tweaks {{{1
+" mappings for colormap: <leader> c {{{1
 " <leader>c to choose color schemes interactively
 nnoremap <silent> <Leader>c :call fzf#run({
             \   'source':
