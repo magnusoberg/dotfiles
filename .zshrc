@@ -71,7 +71,7 @@ export PS1='%m %~ %# '
 
 # Seems I need to run this here in order to get completion running properly.
 # Used to rely on zplug, but this was not sufficient, as I couldn't get word completion for FASD working without this.
-autoload -Uz compinit && compinit
+# autoload -Uz compinit && compinit
 
 # Don't know what this does actually - was added by compinstall somehow
 zstyle :compinstall filename ~/.zshrc
