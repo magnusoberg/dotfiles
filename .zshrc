@@ -149,6 +149,11 @@ alias help='run-help'
 #     -o -type d -print \
 #     -o -type l -print 2> /dev/null | cut -b3-"
 #
+
+# Source the Powerlevel9k theme -- make sure to specify the custom env variables before this!
+source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+export ZSH_THEME="powerlevel9k/powerlevel9k"
+
 # {{{ Setup zplug
 export ZPLUG_HOME="$HOME/.zplug"
 source "$ZPLUG_HOME/init.zsh"
@@ -157,11 +162,6 @@ source "$ZPLUG_HOME/init.zsh"
 
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-# zplug "akinjide/chi", as:theme
-# zplug "aaronjamesyoung/aaron-zsh-theme", as:theme, from:oh-my-zsh
-# zplug "modules/prompt", from:prezto
-# zplug 'themes/sorin', from:oh-my-zsh
-# zplug 'themes/robbyrussell', from:oh-my-zsh
 
 zplug check || zplug install
 zplug load
