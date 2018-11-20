@@ -6,8 +6,8 @@ export HISTSIZE=100000        # 100K history lines should be enough
 export SAVEHIST=$HISTSIZE
 
 # Don't know why these were explicitly set. Leaving them unset until I can figure out why
-# export LC_ALL=en_US.UTF-8
-# export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Emacs style
 bindkey -e
