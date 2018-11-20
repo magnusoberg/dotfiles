@@ -97,7 +97,7 @@ for f in $files; do
 done
 
 # {{{ FASD initialization
-# Below is command inserted by 'fasd --init auto'
+# Cache implementiation to speed up loading of fasd init settings
 local fasd_cache="${HOME}/.zsh/fasd-init.sh"
 if [[ "$(command -v fasd)" -nt "${fasd_cache}" || ! -s "${fasd_cache}" ]]; then
     fasd --init auto >| "${fasd_cache}"
@@ -115,19 +115,19 @@ unset fasd_cache
 # Some paths are already set: checkout /etc/zprofile, /etc/paths, /etc/paths.d etc.
 #   also /usr/libexec/path_helper -s uses some of the above to pre-generate paths
 path=(
-  $path                                  # Don't overwrite existing paths
-  /usr/local/opt/go/libexec/bin          # Go installation path
-  ~/go/bin                               # Needed by Go
-  /Users/magnus/Library/Python/2.7/bin   # Python 2.7
-  /Users/magnus/Library/Python/3.7/bin   # Python3
-  /usr/local/sbin                        # Some extra Homebrew locations
+ $path                                  # Don't overwrite existing paths
+ /usr/local/opt/go/libexec/bin          # Go installation path
+ ~/go/bin                               # Needed by Go
+ /Users/magnus/Library/Python/2.7/bin   # Python 2.7
+ /Users/magnus/Library/Python/3.7/bin   # Python3
+ /usr/local/sbin                        # Some extra Homebrew locations
 )
 
 # Function paths
 fpath=(
-  $fpath
-  /usr/local/share/zsh-completions       # Recommended by `brew install zsh-completions`
-  ~/.zsh/funcs
+ $fpath
+ /usr/local/share/zsh-completions       # Recommended by `brew install zsh-completions`
+ ~/.zsh/funcs                           # My personal functions
 )
 
 export GOPATH=${HOME}/go
