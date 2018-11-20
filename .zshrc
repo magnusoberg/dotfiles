@@ -5,6 +5,9 @@ export HISTFILE=~/.histfile
 export HISTSIZE=100000        # 100K history lines should be enough
 export SAVEHIST=$HISTSIZE
 
+# Remove annoying Beer mug from Homebrew
+export HOMEBREW_NO_EMOJI=1
+
 # Don't know why these were explicitly set. Leaving them unset until I can figure out why
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
