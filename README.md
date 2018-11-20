@@ -42,7 +42,7 @@ brew install zsh zsh-completions
 
 # ncurses based directory usage tools
 brew install ncdu
-brew install mc     # Midnight commander
+#brew install mc     # Midnight commander
 
 # Install youtube downloader and vlc for background videos
 brew install youtube-dl
