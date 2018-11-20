@@ -221,6 +221,9 @@ Plug 'xolox/vim-misc'
 
 Plug 'vim-syntastic/syntastic'
 
+" Allows syntax highlighting in .tmux.conf and also 'K' navigation to tmux man page
+Plug 'tmux-plugins/vim-tmux'
+
 " Vim specific Solarized theme
 " Plug 'altercation/vim-colors-solarized'
 
