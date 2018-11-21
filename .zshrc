@@ -20,14 +20,12 @@ bindkey -e
 autoload -U select-word-style
 select-word-style bash
 
-# zaw allows Ctrl-X + ; to bring up Zaw menu -- pretty cool, but slow
-#source ~/src/zaw/zaw.zsh
-
+source ~/src/zaw/zaw.zsh
 # Enable Ctrl-x-e to edit command line
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey '^xe' edit-command-line
-bindkey '^x^e' edit-command-line
+# autoload -U edit-command-line
+# zle -N edit-command-line
+# bindkey '^xe' edit-command-line
+# bindkey '^x^e' edit-command-line
 
 # {{{ Set options
 # setopt appendhistory
@@ -58,7 +56,7 @@ setopt histverify
 setopt incappendhistory
 
 # Allow comments at the end of command lines
-setopt INTERACTIVE_COMMENTS
+setopt interactivecomments
 
 # setopt nomatch
 setopt nonotify
