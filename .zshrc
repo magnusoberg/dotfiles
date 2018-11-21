@@ -20,49 +20,35 @@ bindkey -e
 autoload -U select-word-style
 select-word-style bash
 
-source ~/src/zaw/zaw.zsh
+# zaw allows Ctrl-X + ; to bring up Zaw menu -- pretty cool, but slow
+#source ~/src/zaw/zaw.zsh
+
 # Enable Ctrl-x-e to edit command line
-# autoload -U edit-command-line
-# zle -N edit-command-line
-# bindkey '^xe' edit-command-line
-# bindkey '^x^e' edit-command-line
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
 
 # {{{ Set options
-# setopt appendhistory
-setopt autocd
-setopt nobeep
-# Treat the '!' character specially during expansion
-# setopt banghist
-setopt extendedglob
-# Write the history file in the ":start:elapsed;command" format
-setopt extendedhistory
-# Expire duplicate entries first when trimming history
-setopt histexpiredupsfirst
-# Do not display a line previously found.
-setopt histfindnodups
-# Delete old recorded entry if new entry is a duplicate.
-setopt histignorealldups
-# Dont record an entry that was just recorded again.
-setopt histignoredups
-# Dont record an entry starting with a space.
-setopt histignorespace
-# Remove superfluous blanks before recording entry.
-setopt histreduceblanks
-# Dont write duplicate entries in the history file.
-setopt histsavenodups
-# Dont execute immediately upon history expansion.
-setopt histverify
-# Write to the history file immediately, not when the shell exits.
-setopt incappendhistory
 
-# Allow comments at the end of command lines
-setopt interactivecomments
+setopt autocd                # Allow typing plain directory names on the commandline
+setopt nobeep                # Don't beep on error
+setopt extendedglob          # Treat ~, # and ^ as filename globs
+setopt extendedhistory       # Write the history file in the ":start:elapsed;command" format
+setopt histexpiredupsfirst   # Expire duplicate entries first when trimming history
+setopt histfindnodups        # Do not display a line previously found.
+setopt histignorealldups     # Delete old recorded entry if new entry is a duplicate.
+setopt histignoredups        # Dont record an entry that was just recorded again.
+setopt histignorespace       # Dont record an entry starting with a space.
+setopt histreduceblanks      # Remove superfluous blanks before recording entry.
+setopt histsavenodups        # Dont write duplicate entries in the history file.
+setopt histverify            # Dont execute immediately upon history expansion.
+setopt incappendhistory      # Write to the history file immediately, not when the shell exits.
+setopt interactivecomments   # Allow comments at the end of command lines
+setopt nonotify              # Notify background jobs only just before PROMPT and not immediately
+setopt promptsubst           # Allow substitutions in the command prompt
+setopt sharehistory          # Share history between all sessions.
 
-# setopt nomatch
-setopt nonotify
-setopt promptsubst
-# Share history between all sessions.
-setopt sharehistory
 # }}}
 
 export PS1='%m %~ %# '
@@ -146,6 +132,8 @@ alias help='run-help'
 #     -o -type d -print \
 #     -o -type l -print 2> /dev/null | cut -b3-"
 #
+
+POWERLEVEL9K_DISABLE_RPROMPT=true
 
 # Source the Powerlevel9k theme -- make sure to specify the custom env variables before this!
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
