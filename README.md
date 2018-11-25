@@ -116,6 +116,13 @@ brew cask install visual-studio-code
 brew cask install slack
 brew cask install gdrive
 brew cask install 1password
+brew cask install dropbox
+
+# Might need to install virtualbox twice. First time will fail because it needs
+# some kernel extensions enabled. Once enabled - reinstall and it shoud work.
+brew cask install virtualbox    # Required by minikube to run k8 clusters locally
+
+brew cask install minikube      # k8 dev-cluster on a single host using virtualbox
 
 # Needed this after a while since, brew stopped working without it.
 brew cask install xcrun
