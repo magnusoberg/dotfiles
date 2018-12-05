@@ -104,6 +104,7 @@ path=(
   /Users/magnus/Library/Python/2.7/bin   # Python 2.7
   /Users/magnus/Library/Python/3.7/bin   # Python3
   /usr/local/sbin                        # Some extra Homebrew locations
+  /usr/local/lib/ruby/gems/2.5.0/bin     # Default location for ruby gems
 )
 
 # Function paths
