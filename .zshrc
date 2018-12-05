@@ -115,6 +115,8 @@ fpath=(
   ~/.zsh/completion                      # Completion scripts
 )
 
+source $(dirname $(gem which colorls))/tab_complete.sh
+
 export GOPATH=${HOME}/go
 export PATH
 export EDITOR=vim
@@ -141,6 +143,7 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 # Source the Powerlevel9k theme -- make sure to specify the custom env variables before this!
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 export ZSH_THEME="powerlevel9k/powerlevel9k"
+
 
 # {{{ Setup zplug
 export ZPLUG_HOME="$HOME/.zplug"
