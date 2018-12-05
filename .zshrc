@@ -135,6 +135,7 @@ alias help='run-help'
 #
 
 POWERLEVEL9K_DISABLE_RPROMPT=true
+POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Source the Powerlevel9k theme -- make sure to specify the custom env variables before this!
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
