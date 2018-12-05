@@ -198,4 +198,6 @@ alias gst='git st'
 alias hd='hexdump -C'
 alias nl='nl -s ". " -w 3'
 
+alias gc='git commit -m '
+
 #End of file
