@@ -140,8 +140,8 @@ endif
 let g:airline_powerline_fonts = 1
 " let g:airline_theme="bubblegum"
 let g:airline#extensions#tabline#enabled = 0
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+" let g:airline_left_sep=''
+" let g:airline_right_sep=''
 
 " let g:tmuxline_separators = {
 "       \ 'left' : '',
@@ -149,7 +149,7 @@ let g:airline_right_sep=''
 "       \ 'right' : '',
 "       \ 'right_alt' : '',
 "       \ 'space' : ' '}
-"
+
 " let g:tmuxline_preset = {
 "       \'a'    : '#S',
 "       \'win'  : '#I #W#F',
