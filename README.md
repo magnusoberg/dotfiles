@@ -148,6 +148,13 @@ cd fonts
 cd ..
 rm -rf fonts/
 
+# Setup Nerd Fonts
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
+
+# Install colorls
+gem install colorls
+
 # Setup personal environemt
 cd ~
 git clone https://github.com/magnusoberg/dotfiles
