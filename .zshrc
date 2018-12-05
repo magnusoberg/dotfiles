@@ -137,8 +137,13 @@ alias help='run-help'
 #     -o -type l -print 2> /dev/null | cut -b3-"
 #
 
-POWERLEVEL9K_DISABLE_RPROMPT=true
+# Powerlevel9k variables
 POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_DISABLE_RPROMPT=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰─ $ "
 
 # Source the Powerlevel9k theme -- make sure to specify the custom env variables before this!
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
