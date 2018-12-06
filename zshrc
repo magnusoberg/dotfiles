@@ -199,5 +199,6 @@ alias hd='hexdump -C'
 alias nl='nl -s ". " -w 3'
 
 alias gc='git commit -m '
+alias kc='kubectl'
 
 #End of file
