@@ -24,7 +24,11 @@ setw -g window-status-activity-attr "none"
 setw -g window-status-activity-fg "colour25"
 setw -g window-status-separator ""
 setw -g window-status-bg "colour233"
+
+# Left and Right status sections
 set -g status-left "#[fg=colour189,bg=colour25] #S #[fg=colour25,bg=colour233,nobold,nounderscore,noitalics]"
 set -g status-right "#[fg=colour235,nobold,nounderscore,noitalics]#[fg=colour231] #(uptime |sed \"s/^.* up /Up /;s/  / /g;s/load average:/load:/\") #[fg=colour25,bg=colour235,nobold,nounderscore,noitalics]#[fg=colour189,bg=colour25] %a %d-%b-%Y %H:%M:%S "
+
+# Window tab section formats (both active/current and inactive)
 setw -g window-status-format "#[fg=colour233,bg=colour233,nobold,nounderscore,noitalics]#[default] #I #W#F #[fg=colour233,bg=colour233,nobold,nounderscore,noitalics]"
 setw -g window-status-current-format "#[fg=colour233,bg=colour235,nobold,nounderscore,noitalics]#[fg=colour231,bg=colour235] #I #W#F #[fg=colour235,bg=colour233,nobold,nounderscore,noitalics]"
