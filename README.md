@@ -108,6 +108,9 @@ rehash
 # may need to put /usr/local/opt/openssl/bin path first in $PATH
 brew install --force openssl
 
+# This will enable the 'brew bundle' command and allow the use of a Brewfile
+brew tap Homebrew/bundle
+
 brew tap caskroom/cask
 brew cask install iterm2
 brew cask install telegram
