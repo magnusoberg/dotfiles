@@ -139,6 +139,7 @@ endif
 
 let g:airline_powerline_fonts = 1
 " let g:airline_theme="bubblegum"
+
 let g:airline#extensions#tabline#enabled = 0
 " let g:airline_left_sep=''
 " let g:airline_right_sep=''
@@ -301,10 +302,6 @@ augroup MyColors
 augroup END
 
 silent! colorscheme jellybeans
-
-" set background=dark
-" hi Normal ctermbg=none
-
 
 " vim-gitgutter tweaks:
 " Realtime updates stopped working, fixed by following:
