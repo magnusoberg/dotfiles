@@ -33,6 +33,7 @@ bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
 
 # {{{ Set options
+# Only set non-default options to avoid clutter
 
 setopt autocd                # Allow typing plain directory names on the commandline
 setopt nobeep                # Don't beep on error
