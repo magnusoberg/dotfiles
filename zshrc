@@ -199,11 +199,11 @@ fi
 # but probably easier to just to it directly
 alias git=hub
 
-alias gst='git st'
+# Alias g for git and use Git aliases for rest
+alias g='git'
 alias hd='hexdump -C'
 alias nl='nl -s ". " -w 3'
 
-alias gc='git commit -m '
 alias kc='kubectl'
 
 #End of file
