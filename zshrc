@@ -12,6 +12,9 @@ export HOMEBREW_NO_EMOJI=1
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# Try to make use of new centralized config directory as much as possible
+export XDG_CONFIG_HOME=~/.config
+
 # Emacs style
 bindkey -e
 
