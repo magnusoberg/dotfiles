@@ -82,15 +82,6 @@ for f in $files; do
     source ${f}
 done
 
-# {{{ FASD initialization
-# Cache implementiation to speed up loading of fasd init settings
-local fasd_cache="${HOME}/.zsh/fasd-init.sh"
-if [[ "$(command -v fasd)" -nt "${fasd_cache}" || ! -s "${fasd_cache}" ]]; then
-    fasd --init auto >| "${fasd_cache}"
-fi
-source "${fasd_cache}"
-unset fasd_cache
-# }}}
 # Source fzf shell settings if file exists
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -171,6 +162,16 @@ zplug check || zplug install
 zplug load
 # }}}
 
+# {{{ FASD initialization
+# Cache implementiation to speed up loading of fasd init settings
+#   - needs to be after zplug load for some reason!
+local fasd_cache="$HOME/.zsh/fasd-init.sh"
+if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+    fasd --init auto >| "$fasd_cache"
+fi
+source "$fasd_cache"
+unset fasd_cache
+# }}}
 
 # Source tmuxinator completion if it exists
 # [[ -f ~/.zsh/completions/tmuxinator.zsh ]] && source ~/.zsh/completions/tmuxinator.zsh
