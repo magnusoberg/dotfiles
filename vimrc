@@ -193,6 +193,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'godlygeek/tabular'                " Allow alignment based on a pattern/character
 " Plug 'guns/xterm-color-table.vim'     " Enables XtermColorTable command. Press # to yank, t to toggle RGB, f to set fg
 Plug 'mileszs/ack.vim'
+Plug 'jremmen/vim-ripgrep'              " Use :Rg for searches
 " Plug 'PProvost/vim-ps1'               " PowerShell syntax coloring
 
 " Lusty requires Ruby to work
