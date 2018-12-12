@@ -143,7 +143,7 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰─ $ "
 # enable the vcs changeset commit id
 POWERLEVEL9K_SHOW_CHANGESET=true
 # just show the 6 first characters of changeset
-# POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
+POWERLEVEL9K_CHANGESET_HASH_LENGTH=7
 
 # Source the Powerlevel9k theme -- make sure to specify the custom env variables before this!
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
