@@ -160,6 +160,8 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 zplug check || zplug install
+
+# zplug load calls compinit
 zplug load
 # }}}
 
