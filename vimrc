@@ -93,6 +93,11 @@ let $FZF_DEFAULT_COMMAND='find . -type f -o -type l|grep -v ''.git/''|cut -b3-'
 " let g:gitgutter_sign_column_always = 1
 set signcolumn=yes
 
+" vim-gitgutter tweaks:
+" Realtime updates stopped working, fixed by following:
+"   https://github.com/airblade/vim-gitgutter/issues/490#issuecomment-369270014
+let g:gitgutter_terminal_reports_focus = 0
+
 " Directory management (backup, undo, swap) {{{1
 " Save your backups to a less annoying place than the current directory.
 " If you have .vim-backup in the current directory, it'll use that.
@@ -305,8 +310,3 @@ augroup MyColors
 augroup END
 
 silent! colorscheme jellybeans
-
-" vim-gitgutter tweaks:
-" Realtime updates stopped working, fixed by following:
-"   https://github.com/airblade/vim-gitgutter/issues/490#issuecomment-369270014
-let g:gitgutter_terminal_reports_focus = 0
