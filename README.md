@@ -52,6 +52,8 @@ brew cask install vlc
 brew install ag            # Silver searcher   - better than Ack
 brew install pt            # platinum searcher - better than ag
 brew install rg            # ripgrep           - better than pt
+brew install fd            # user-friendlier and faster 'find' - now my default command for FZF_*
+brew install bench         # command line benchmarking tool
 
 brew install python
 brew install httpie
