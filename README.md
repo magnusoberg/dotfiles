@@ -54,6 +54,9 @@ brew install pt            # platinum searcher - better than ag
 brew install rg            # ripgrep           - better than pt
 brew install fd            # user-friendlier and faster 'find' - now my default command for FZF_*
 brew install bench         # command line benchmarking tool
+brew install exa           # modern version of ls - better than colorls
+brew install tldr          # takes a while to update the local database on first run
+brew install ranger        # vim like file manager
 
 brew install python
 brew install httpie
@@ -158,7 +161,7 @@ brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 
 # Install colorls
-gem install colorls
+# gem install colorls   # prefer to use exa instead
 
 # Setup personal environemt
 cd ~
