@@ -14,6 +14,7 @@ nnoremap [b :bp<cr>
 nnoremap ]b :bn<cr>
 
 nmap <C-p> :Files<cr>
+nmap <leader>L :Lines<cr>
 
 " Open/Close folds with space+tab
 nnoremap <leader><tab> za
@@ -180,6 +181,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'                " vim 'hub' to allow :Gbrowse to browse GitHub code
 
 Plug 'vim-scripts/visualrepeat'         " recommended by vim-easy-align to repeat alignments on visual selections
 
@@ -192,7 +194,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'flazz/vim-colorschemes'
 Plug 'godlygeek/tabular'                " Allow alignment based on a pattern/character
 " Plug 'guns/xterm-color-table.vim'     " Enables XtermColorTable command. Press # to yank, t to toggle RGB, f to set fg
-Plug 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'                  " Supports ag as well as ack
 " Plug 'jremmen/vim-ripgrep'              " Use :Rg for searches
 " Plug 'PProvost/vim-ps1'               " PowerShell syntax coloring
 
