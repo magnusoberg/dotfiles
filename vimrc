@@ -86,7 +86,7 @@ endif
 " let &t_EI = "\<Esc>[0 q"
 
 " Default FZF setting: if you had used Homebrew to install fzf
-"set rtp+=/usr/local/opt/fzf
+set rtp+=/usr/local/opt/fzf
 let $FZF_DEFAULT_COMMAND='find . -type f -o -type l|grep -v ''.git/''|cut -b3-'
 
 " Always show the gitgutter column to avoid screen moving when it appears
@@ -175,10 +175,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
+
 " fzf is not really a vim plugin, but fzf.vim will need it installed in order to run properly
 " Could simply use: Plug '~/.fzf' to reference the binary, but the below will install fzf if missing.
 " It will also allow vim to auto-update OS version using :PlugUpdate
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 
