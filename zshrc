@@ -191,26 +191,4 @@ unset fasd_cache
 # I should review these fucntions in more detail at some time
 # [[ -e "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
 
-alias ls='ls -GF'
-alias ll='ls -lah'
-
-if [[ ! $(uname -s) == "Darwin" ]]; then
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-fi
-
-# Common aliases
-
-# alias git to hub so that it can intercept new hub commands easily
-# suggested used: 'eval $(hub alias -s)' or 'eval $(hub alias -s zsh)'
-# but probably easier to just to it directly
-alias git=hub
-
-# Alias g for git and use Git aliases for rest
-alias g='git'
-alias hd='hexdump -C'
-alias nl='nl -s ". " -w 3'
-
-alias kc='kubectl'
-
 #End of file
