@@ -120,8 +120,6 @@ fpath=(
   ~/.zsh/completion                      # Completion scripts
 )
 
-source $(dirname $(gem which colorls))/tab_complete.sh
-
 export GOPATH=${HOME}/go
 export PATH
 export EDITOR=vim
