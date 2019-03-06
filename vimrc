@@ -190,6 +190,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'                " vim 'hub' to allow :Gbrowse to browse GitHub code
 
 Plug 'vim-scripts/visualrepeat'         " recommended by vim-easy-align to repeat alignments on visual selections
+Plug 'michaeljsmith/vim-indent-object'  " Allows indentation ai, ii, aI (and iI) level text objects
+" Plug 'nathanaelkane/vim-indent-guides'  " Allows indentation guides (shadows)
 
 " Allow 'K' to lookup vim language features in help
 Plug 'tpope/vim-scriptease'
