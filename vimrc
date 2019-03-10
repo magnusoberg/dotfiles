@@ -291,6 +291,8 @@ nnoremap <silent> <Leader>c :call fzf#run({
 " care of all that. So all that remains is to select the colorscheme :)
 " Use silent to avoid error being shown if colorscheme does not exist yet
 
+" The MyHighlights() function and MyColors augroup need to be defined BEFORE
+" calling any colorscheme
 function! MyHighlights() abort
     hi SignColumn             guibg=NONE
     hi NonText                guibg=NONE
@@ -302,9 +304,9 @@ function! MyHighlights() abort
     hi vimLineComment         guibg=NONE cterm=italic guifg=#808080
     hi Folded                 guibg=NONE
     hi FoldColumn             guibg=NONE
-    hi GitGutterAddDefault    guibg=NONE
-    hi GitGutterDeleteDefault guibg=NONE
-    hi GitGutterChangeDefault guibg=NONE
+    hi GitGutterAddDefault    guibg=NONE guifg=#00ff00
+    hi GitGutterDeleteDefault guibg=NONE guifg=#ff0000
+    hi GitGutterChangeDefault guibg=NONE guifg=#ffff00
 endfunction
 
 augroup MyColors
