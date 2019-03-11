@@ -78,19 +78,26 @@ endif
 
 " Change cursor shape between insert and normal mode in iTerm2.app
 if $TERM_PROGRAM =~ "iTerm"
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
-    let &t_SR = "\<Esc>]50;CursorShape=2\x7" " Underline in replace mode
+    " Below is specifically for running tmux in iTerm2
+    " https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"  " Block in normal mode
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"  " Vertical bar in insert mode
+    let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"  " Underline in replace mode
+
+    " let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+    " let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+    " let &t_SR = "\<Esc>]50;CursorShape=2\x7" " Underline in replace mode
 endif
 " let &t_SI = "\<Esc>[3 q"
 " let &t_EI = "\<Esc>[0 q"
 
 " Default FZF setting: if you had used Homebrew to install fzf
 set rtp+=/usr/local/opt/fzf
-let $FZF_DEFAULT_COMMAND='find . -type f -o -type l|grep -v ''.git/''|cut -b3-'
 
-" Always show the gitgutter column to avoid screen moving when it appears
-" let g:gitgutter_sign_column_always = 1
+" Use fd instead of find and grep
+let $FZF_DEFAULT_COMMAND='fd -tf --hidden --follow'
+
+" https://github.com/airblade/vim-gitgutter/issues/431#issuecomment-319696108
 set signcolumn=yes
 
 " vim-gitgutter tweaks:
@@ -314,4 +321,4 @@ augroup MyColors
     autocmd ColorScheme * call MyHighlights()
 augroup END
 
-silent! colorscheme jellybeans
+colorscheme jellybeans
