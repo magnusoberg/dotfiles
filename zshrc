@@ -162,10 +162,14 @@ POWERLEVEL9K_CHANGESET_HASH_LENGTH=7
 # }}}
 
 # {{{ Setup zplug
-export ZPLUG_HOME="$HOME/.zplug"
+if [[ -d /usr/local/opt/zplug ]]; then
+    # installed via Homebrew.
+    export ZPLUG_HOME="/usr/local/opt/zplug"
+else
+    # installed manually in root
+    export ZPLUG_HOME="$HOME/.zplug"
+fi
 source "$ZPLUG_HOME/init.zsh"
-
-# setopt prompt_subst
 
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
@@ -173,6 +177,9 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # Powerlevel10k is MUCH faster than 9k - so I use that instead.
 # It is a drop-in replacement for 9k, so I don't need to change any of the variables
 zplug romkatv/powerlevel10k, use:powerlevel10k.zsh-theme
+
+# Allow zplug to manage itself, for updates etc.
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 zplug check || zplug install
 
