@@ -1,7 +1,7 @@
 # .zshrc file
 # Author: Magnus Oberg
 
-# Zsh start up sequence:
+# Zsh start up sequence: {{{
 #  1) /etc/zshenv   -> Always run for every zsh.   (login + interactive + other)
 #  2)   ~/.zshenv   -> Usually run for every zsh.  (login + interactive + other)
 #  3) /etc/zprofile -> Run for login shells.       (login)
@@ -10,6 +10,7 @@
 #  6)   ~/.zshrc    -> Run for interactive shells. (login + interactive)
 #  7) /etc/zlogin   -> Run for login shells.       (login)
 #  8)   ~/.zlogin   -> Run for login shells.       (login)
+# }}}
 
 export HISTFILE=~/.histfile
 export HISTSIZE=100000        # 100K history lines should be enough
@@ -142,7 +143,7 @@ alias help='run-help'
 #     -o -type l -print 2> /dev/null | cut -b3-"
 #
 
-# Powerlevel9k variables
+# Powerlevel9k variables {{{
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_DISABLE_RPROMPT=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
@@ -156,9 +157,9 @@ POWERLEVEL9K_SHOW_CHANGESET=true
 POWERLEVEL9K_CHANGESET_HASH_LENGTH=7
 
 # Source the Powerlevel9k theme -- make sure to specify the custom env variables before this!
-source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
-export ZSH_THEME="powerlevel9k/powerlevel9k"
-
+# source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+# export ZSH_THEME="powerlevel9k/powerlevel9k"
+# }}}
 
 # {{{ Setup zplug
 export ZPLUG_HOME="$HOME/.zplug"
@@ -169,18 +170,23 @@ source "$ZPLUG_HOME/init.zsh"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
+# Powerlevel10k is MUCH faster than 9k - so I use that instead.
+# It is a drop-in replacement for 9k, so I don't need to change any of the variables
+zplug romkatv/powerlevel10k, use:powerlevel10k.zsh-theme
+
 zplug check || zplug install
 
-# zplug load calls compinit
+# Calls compinit automatically
 zplug load
 # }}}
 
-# Source tmuxinator completion if it exists
+# Source tmuxinator completion if it exists {{{
 # [[ -f ~/.zsh/completions/tmuxinator.zsh ]] && source ~/.zsh/completions/tmuxinator.zsh
 # local files=(~/.zsh/completions/*.zsh-completion)
 # for f in $files; do
 #     source ${f}
 # done
+# }}}
 
 # AWS Cli tools...
 [[ -d ~/Library/Python/2.7/bin ]] && path=($path ~/Library/Python/2.7/bin)
