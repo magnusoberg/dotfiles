@@ -105,10 +105,14 @@ done
 # File paths
 # Some paths are already set: checkout /etc/zprofile, /etc/paths, /etc/paths.d etc.
 #   also /usr/libexec/path_helper -s uses some of the above to pre-generate paths
+export GOPATH=${HOME}/go
+export PATH
+export EDITOR=vim
+
 path=(
   $path                                  # Don't overwrite existing paths
-  /usr/local/opt/go/libexec/bin          # Go installation path
-  ~/go/bin                               # Needed by Go
+  /usr/local/opt/go/libexec/bin          # Go installation path - needed by Go
+  ${GOPATH}/bin                          # Go executables
   /Users/magnus/Library/Python/2.7/bin   # Python 2.7
   /Users/magnus/Library/Python/3.7/bin   # Python3
   /usr/local/sbin                        # Some extra Homebrew locations
@@ -123,10 +127,6 @@ fpath=(
   ~/.zsh/funcs                           # My personal functions
   ~/.zsh/completion                      # Completion scripts
 )
-
-export GOPATH=${HOME}/go
-export PATH
-export EDITOR=vim
 
 # Needed for GNU PGP to be able to prompt for password somehow..
 export GPG_TTY=$(tty)
