@@ -92,6 +92,7 @@ fi
 # make sure to secure your ~/.zsh directory so only you can write there!
 local files=(~/.zsh/*.zsh) 2>/dev/null
 for f in $files; do
+    # echo "Sourcing ${f}"
     source ${f}
 done
 
@@ -160,7 +161,6 @@ POWERLEVEL9K_CHANGESET_HASH_LENGTH=7
 # source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 # export ZSH_THEME="powerlevel9k/powerlevel9k"
 # }}}
-
 # {{{ Setup zplug
 if [[ -d /usr/local/opt/zplug ]]; then
     # installed via Homebrew.
@@ -176,7 +176,7 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # Powerlevel10k is MUCH faster than 9k - so I use that instead.
 # It is a drop-in replacement for 9k, so I don't need to change any of the variables
-zplug romkatv/powerlevel10k, use:powerlevel10k.zsh-theme
+zplug "romkatv/powerlevel10k", use:powerlevel10k.zsh-theme
 
 # Allow zplug to manage itself, for updates etc.
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
@@ -186,7 +186,6 @@ zplug check || zplug install
 # Calls compinit automatically
 zplug load
 # }}}
-
 # Source tmuxinator completion if it exists {{{
 # [[ -f ~/.zsh/completions/tmuxinator.zsh ]] && source ~/.zsh/completions/tmuxinator.zsh
 # local files=(~/.zsh/completions/*.zsh-completion)
@@ -194,10 +193,10 @@ zplug load
 #     source ${f}
 # done
 # }}}
-
-# AWS Cli tools...
+# AWS Cli tools... {{{
 [[ -d ~/Library/Python/2.7/bin ]] && path=($path ~/Library/Python/2.7/bin)
 [[ -f ~/Library/Python/2.7/bin/aws_zsh_completer.sh ]] && source ~/Library/Python/2.7/bin/aws_zsh_completer.sh
+# }}}
 
 # Source iTerm integration files if they exist
 # I should review these fucntions in more detail at some time
