@@ -11,6 +11,7 @@
 #  7) /etc/zlogin   -> Run for login shells.       (login)
 #  8)   ~/.zlogin   -> Run for login shells.       (login)
 # }}}
+# zmodload zsh/zprof
 
 export HISTFILE=~/.histfile
 export HISTSIZE=100000        # 100K history lines should be enough
@@ -23,7 +24,8 @@ export HOMEBREW_NO_EMOJI=1
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# Try to make use of new centralized config directory as much as possible
+# Try to make use of new centralized config directory as much as possible by specifically
+# telling new programs about the .config directory.
 export XDG_CONFIG_HOME=~/.config
 
 # Emacs style
@@ -83,7 +85,7 @@ zstyle ':completion:*' menu select
 
 # End of compinstall }}}
 
-# Only run this on my 'local' machine - no remote machines.
+# Only run this on my 'local' machine
 if [[ $HOST == 'Magnus.local' ]]; then
     eval $(keychain --eval --agents ssh --inherit any id_rsa --quiet)
 fi
@@ -92,7 +94,6 @@ fi
 # make sure to secure your ~/.zsh directory so only you can write there!
 local files=(~/.zsh/*.zsh) 2>/dev/null
 for f in $files; do
-    # echo "Sourcing ${f}"
     source ${f}
 done
 
@@ -126,6 +127,7 @@ fpath=(
   /usr/local/share/zsh-completions       # Recommended by `brew install zsh-completions`
   ~/.zsh/funcs                           # My personal functions
   ~/.zsh/completion                      # Completion scripts
+  ~/.zsh/autoload
 )
 
 # Needed for GNU PGP to be able to prompt for password somehow..
@@ -137,14 +139,7 @@ unalias run-help 2>/dev/null    # stderr redirection needed in case you re-sourc
 autoload run-help
 alias help='run-help'
 
-# # Override FZF defaults
-# export FZF_CTRL_T_COMMAND="command find -L . -mindepth 1 \\( -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
-#     -o -type f -print \
-#     -o -type d -print \
-#     -o -type l -print 2> /dev/null | cut -b3-"
-#
-
-# Powerlevel9k variables {{{
+# Powerlevel9k variables {{{1
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_DISABLE_RPROMPT=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
@@ -160,8 +155,8 @@ POWERLEVEL9K_CHANGESET_HASH_LENGTH=7
 # Source the Powerlevel9k theme -- make sure to specify the custom env variables before this!
 # source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 # export ZSH_THEME="powerlevel9k/powerlevel9k"
-# }}}
-# {{{ Setup zplug
+
+# Setup zplug {{{1
 if [[ -d /usr/local/opt/zplug ]]; then
     # installed via Homebrew.
     export ZPLUG_HOME="/usr/local/opt/zplug"
@@ -183,7 +178,7 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 zplug check || zplug install
 
-# Calls compinit automatically
+# 'zplug load' calls compinit automatically - and only once!
 zplug load
 # }}}
 # Source tmuxinator completion if it exists {{{
