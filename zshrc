@@ -11,6 +11,7 @@
 #  7) /etc/zlogin   -> Run for login shells.       (login)
 #  8)   ~/.zlogin   -> Run for login shells.       (login)
 # }}}
+# zmodload zsh/zprof
 
 export HISTFILE=~/.histfile
 export HISTSIZE=100000        # 100K history lines should be enough
@@ -23,7 +24,8 @@ export HOMEBREW_NO_EMOJI=1
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# Try to make use of new centralized config directory as much as possible
+# Try to make use of new centralized config directory as much as possible by specifically
+# telling new programs about the .config directory.
 export XDG_CONFIG_HOME=~/.config
 
 # Emacs style
@@ -106,10 +108,14 @@ done
 # File paths
 # Some paths are already set: checkout /etc/zprofile, /etc/paths, /etc/paths.d etc.
 #   also /usr/libexec/path_helper -s uses some of the above to pre-generate paths
+export GOPATH=${HOME}/go
+export PATH
+export EDITOR=vim
+
 path=(
   $path                                  # Don't overwrite existing paths
-  /usr/local/opt/go/libexec/bin          # Go installation path
-  ~/go/bin                               # Needed by Go
+  /usr/local/opt/go/libexec/bin          # Go installation path - needed by Go
+  ${GOPATH}/bin                          # Go executables
   /Users/magnus/Library/Python/2.7/bin   # Python 2.7
   /Users/magnus/Library/Python/3.7/bin   # Python3
   /usr/local/sbin                        # Some extra Homebrew locations
@@ -123,11 +129,8 @@ fpath=(
   /usr/local/share/zsh-completions       # Recommended by `brew install zsh-completions`
   ~/.zsh/funcs                           # My personal functions
   ~/.zsh/completion                      # Completion scripts
+  ~/.zsh/autoload
 )
-
-export GOPATH=${HOME}/go
-export PATH
-export EDITOR=vim
 
 # Needed for GNU PGP to be able to prompt for password somehow..
 export GPG_TTY=$(tty)
@@ -138,14 +141,7 @@ unalias run-help 2>/dev/null    # stderr redirection needed in case you re-sourc
 autoload run-help
 alias help='run-help'
 
-# # Override FZF defaults
-# export FZF_CTRL_T_COMMAND="command find -L . -mindepth 1 \\( -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
-#     -o -type f -print \
-#     -o -type d -print \
-#     -o -type l -print 2> /dev/null | cut -b3-"
-#
-
-# Powerlevel9k variables {{{
+# Powerlevel9k variables {{{1
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_DISABLE_RPROMPT=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
@@ -161,9 +157,8 @@ POWERLEVEL9K_CHANGESET_HASH_LENGTH=7
 # Source the Powerlevel9k theme -- make sure to specify the custom env variables before this!
 # source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 # export ZSH_THEME="powerlevel9k/powerlevel9k"
-# }}}
 
-# {{{ Setup zplug
+# Setup zplug {{{1
 if [[ -d /usr/local/opt/zplug ]]; then
     # installed via Homebrew.
     export ZPLUG_HOME="/usr/local/opt/zplug"
@@ -185,10 +180,9 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 zplug check || zplug install
 
-# Calls compinit automatically
+# 'zplug load' calls compinit automatically - and only once!
 zplug load
 # }}}
-
 # Source tmuxinator completion if it exists {{{
 # [[ -f ~/.zsh/completions/tmuxinator.zsh ]] && source ~/.zsh/completions/tmuxinator.zsh
 # local files=(~/.zsh/completions/*.zsh-completion)
@@ -196,10 +190,10 @@ zplug load
 #     source ${f}
 # done
 # }}}
-
-# AWS Cli tools...
+# AWS Cli tools... {{{
 [[ -d ~/Library/Python/2.7/bin ]] && path=($path ~/Library/Python/2.7/bin)
 [[ -f ~/Library/Python/2.7/bin/aws_zsh_completer.sh ]] && source ~/Library/Python/2.7/bin/aws_zsh_completer.sh
+# }}}
 
 # Source iTerm integration files if they exist
 # I should review these fucntions in more detail at some time
