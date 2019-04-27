@@ -84,8 +84,10 @@ zstyle ':completion:*' menu select
 # End of compinstall }}}
 
 # Only run this on my 'local' machine - no remote machines.
-if [[ $HOST == 'Magnus.local' ]]; then
-    eval $(keychain --eval --agents ssh --inherit any id_rsa --quiet)
+if [[ $HOST == 'magnus-mbp.local' ]]; then
+    echo "Starting local keychain daemon"
+    # eval $(keychain --eval --agents ssh --inherit any id_rsa --quiet)
+    eval $(keychain --eval id_rsa )
 fi
 
 # Source my files
