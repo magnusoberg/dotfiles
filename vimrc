@@ -77,6 +77,8 @@ if has("termguicolors")
 endif
 
 " Change cursor shape between insert and normal mode in iTerm2.app
+" let &t_SI = "\<Esc>[3 q"
+" let &t_EI = "\<Esc>[0 q"
 if $TERM_PROGRAM =~ "iTerm"
     " Below is specifically for running tmux in iTerm2
     " https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
@@ -84,21 +86,16 @@ if $TERM_PROGRAM =~ "iTerm"
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"  " Vertical bar in insert mode
     let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"  " Underline in replace mode
 
-    " let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
     " let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+    " let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
     " let &t_SR = "\<Esc>]50;CursorShape=2\x7" " Underline in replace mode
 endif
-" let &t_SI = "\<Esc>[3 q"
-" let &t_EI = "\<Esc>[0 q"
 
 " Default FZF setting: if you had used Homebrew to install fzf
 set rtp+=/usr/local/opt/fzf
 
 " Use fd instead of find and grep
 let $FZF_DEFAULT_COMMAND='fd -tf --hidden --follow'
-
-" https://github.com/airblade/vim-gitgutter/issues/431#issuecomment-319696108
-set signcolumn=yes
 
 " vim-gitgutter tweaks:
 " Realtime updates stopped working, fixed by following:
@@ -293,15 +290,13 @@ nnoremap <silent> <Leader>c :call fzf#run({
             \   'left':    30
             \ })<CR>
 
-"Finalizing setup {{{1
+"colorscheme and hightlights{{{1
 " No need to set 'syntax on', or 'filetype plugin indent' etc. as 'Plug' takes
 " care of all that. So all that remains is to select the colorscheme :)
-" Use silent to avoid error being shown if colorscheme does not exist yet
 
 " The MyHighlights() function and MyColors augroup need to be defined BEFORE
 " calling any colorscheme
 function! MyHighlights() abort
-    hi SignColumn             guibg=NONE
     hi NonText                guibg=NONE
     hi Normal                 guibg=NONE
     hi LineNr                 guibg=NONE
@@ -311,9 +306,9 @@ function! MyHighlights() abort
     hi vimLineComment         guibg=NONE cterm=italic guifg=#808080
     hi Folded                 guibg=NONE
     hi FoldColumn             guibg=NONE
-    hi GitGutterAddDefault    guibg=NONE guifg=#00ff00
-    hi GitGutterDeleteDefault guibg=NONE guifg=#ff0000
-    hi GitGutterChangeDefault guibg=NONE guifg=#ffff00
+    hi GitGutterAdd           guibg=NONE guifg=#00ff00
+    hi GitGutterDelete        guibg=NONE guifg=#ff0000
+    hi GitGutterChange        guibg=NONE guifg=#ffff00
 endfunction
 
 augroup MyColors
