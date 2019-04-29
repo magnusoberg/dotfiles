@@ -49,6 +49,7 @@ set previewheight=25           " Fugitive Gstatus window is a bit small by defau
 set scrolloff=5                " Scroll offset for top/bottom of window
 
 set clipboard=unnamed           " Allow yanking to system clipboard
+set mouse=a
 
 " Note 'tab' won't be visible unless set noexpandtab
 " You need to set list for listchars to be visible.
@@ -101,6 +102,7 @@ let $FZF_DEFAULT_COMMAND='fd -tf --hidden --follow'
 " Realtime updates stopped working, fixed by following:
 "   https://github.com/airblade/vim-gitgutter/issues/490#issuecomment-369270014
 let g:gitgutter_terminal_reports_focus = 0
+set signcolumn=yes
 
 " Directory management (backup, undo, swap) {{{1
 " Save your backups to a less annoying place than the current directory.
