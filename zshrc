@@ -191,8 +191,12 @@ zplug load
 # done
 # }}}
 # AWS Cli tools... {{{
-[[ -d ~/Library/Python/2.7/bin ]] && path=($path ~/Library/Python/2.7/bin)
-[[ -f ~/Library/Python/2.7/bin/aws_zsh_completer.sh ]] && source ~/Library/Python/2.7/bin/aws_zsh_completer.sh
+# [[ -d ~/Library/Python/2.7/bin ]] && path=($path ~/Library/Python/2.7/bin)
+# [[ -f ~/Library/Python/2.7/bin/aws_zsh_completer.sh ]] && source ~/Library/Python/2.7/bin/aws_zsh_completer.sh
+# }}}
+# gcloud CLI tools {{{
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 # }}}
 
 # Source iTerm integration files if they exist
