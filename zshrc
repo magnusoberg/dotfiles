@@ -92,6 +92,9 @@ if [[ $HOST == 'magnus-mbp.local' ]]; then
     eval $(keychain --eval id_rsa )
 fi
 
+# Enable 'z' commands
+eval "$(lua ~/repos/src/z.lua/z.lua --init zsh enhance fzf)"
+
 # Source my files
 # make sure to secure your ~/.zsh directory so only you can write there!
 local files=(~/.zsh/*.zsh) 2>/dev/null
