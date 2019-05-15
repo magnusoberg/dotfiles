@@ -102,6 +102,9 @@ for f in $files; do
     source ${f}
 done
 
+files=( ~/.zsh/autoload/* )
+autoload -Uz ${files:t}
+
 # Source fzf shell settings if file exists
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
