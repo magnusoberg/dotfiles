@@ -147,6 +147,12 @@ unalias run-help 2>/dev/null    # stderr redirection needed in case you re-sourc
 autoload run-help
 alias help='run-help'
 
+# autoload functions {{{1
+# ~/.zsh/autoload/githash
+zle -N githash
+bindkey '^gp' githash
+
+#}}}
 # Powerlevel9k variables {{{1
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_DISABLE_RPROMPT=true
