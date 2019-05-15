@@ -152,6 +152,8 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰─ $ "
 
+# show only the last three directories
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 # enable the vcs changeset commit id
 POWERLEVEL9K_SHOW_CHANGESET=true
 # just show the 6 first characters of changeset
