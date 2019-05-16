@@ -242,6 +242,9 @@ Plug 'vim-syntastic/syntastic'
 " Allows syntax highlighting in .tmux.conf and also 'K' navigation to tmux man page
 Plug 'tmux-plugins/vim-tmux'
 
+" Add Kotlin syntax support
+Plug 'udalov/kotlin-vim'
+
 " Vim specific Solarized theme
 " Plug 'altercation/vim-colors-solarized'
 
