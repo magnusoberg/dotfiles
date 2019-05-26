@@ -61,6 +61,12 @@ set foldcolumn=1      " I don't use nested folding much, so 1 column should be p
 set laststatus=2      " Show statusline even when there is only 1 window active
 set shortmess+=I      " Don't display a startup message when starting a blank Vim.
 
+" allow hanging indent for lists, and allow -,+, and * as bulleted list items
+" useful for GitCommit messages
+set formatoptions+=n
+set autoindent
+set formatlistpat=^\\s*\\d\\+[\]:.)}\\t\ ]\\s*\\\|^\\s*[-+*]\\s\\+
+
 " Only set Truecolor if Vim supports it
 if has("termguicolors")
     " Allow Vim to display 24 bit truecolor
