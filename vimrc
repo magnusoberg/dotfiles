@@ -83,19 +83,18 @@ if has("termguicolors")
 
 endif
 
-" Change cursor shape between insert and normal mode in iTerm2.app
-" let &t_SI = "\<Esc>[3 q"
-" let &t_EI = "\<Esc>[0 q"
 if $TERM_PROGRAM =~ "iTerm"
-    " Below is specifically for running tmux in iTerm2
-    " https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"  " Block in normal mode
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"  " Vertical bar in insert mode
-    let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"  " Underline in replace mode
-
+    " Change cursor shape
     " let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
     " let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
     " let &t_SR = "\<Esc>]50;CursorShape=2\x7" " Underline in replace mode
+
+    " Below is specifically for running tmux in iTerm2
+    " https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
+    " let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"  " Block in normal mode
+    " let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"  " Vertical bar in insert mode
+    " let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"  " Underline in replace mode
+
 endif
 
 " Default FZF setting: if you had used Homebrew to install fzf
