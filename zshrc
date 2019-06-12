@@ -155,8 +155,9 @@ bindkey '^gp' githash
 #}}}
 # Powerlevel9k variables {{{1
 POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_DISABLE_RPROMPT=true
+# POWERLEVEL9K_DISABLE_RPROMPT=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time time)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰─ $ "
@@ -165,9 +166,10 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰─ $ "
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 # enable the vcs changeset commit id
 POWERLEVEL9K_SHOW_CHANGESET=true
-# just show the 6 first characters of changeset
+# just show the 7 first characters of changeset
 POWERLEVEL9K_CHANGESET_HASH_LENGTH=7
-
+# POWERLEVEL9K_VCS_BRANCH_ICON=$'\uF126'
+# POWERLEVEL9K_VCS_COMMIT_ICON=$'\uE729'
 # Source the Powerlevel9k theme -- make sure to specify the custom env variables before this!
 # source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 # export ZSH_THEME="powerlevel9k/powerlevel9k"
