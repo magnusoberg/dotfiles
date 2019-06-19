@@ -200,6 +200,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'               " run asynchronous shell tasks through :Dispatch
 Plug 'tpope/vim-rhubarb'                " vim 'hub' to allow :Gbrowse to browse GitHub code
+Plug 'tpope/vim-obsession'              " vim 'hub' to allow :Gbrowse to browse GitHub code
 
 Plug 'vim-scripts/visualrepeat'         " recommended by vim-easy-align to repeat alignments on visual selections
 Plug 'michaeljsmith/vim-indent-object'  " Allows indentation ai, ii, aI (and iI) level text objects
@@ -253,6 +254,10 @@ Plug 'udalov/kotlin-vim'
 
 " Vim specific Solarized theme
 " Plug 'altercation/vim-colors-solarized'
+
+" Use motions to match words, if/else, brackets etc.
+Plug 'andymass/vim-matchup'
+Plug 'mhinz/vim-startify'
 
 call plug#end()
 
