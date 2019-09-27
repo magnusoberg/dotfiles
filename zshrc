@@ -88,8 +88,8 @@ zstyle ':completion:*' menu select
 # Only run this on my 'local' machine - no remote machines.
 if [[ $HOST == 'magnus-mbp.local' ]]; then
     echo "Starting local keychain daemon"
-    # eval $(keychain --eval --agents ssh --inherit any id_rsa --quiet)
-    eval $(keychain --eval id_rsa )
+    eval $(keychain --eval --agents ssh --inherit any id_rsa)
+    # eval $(keychain --eval id_rsa )
 fi
 
 # Enable 'z' commands
@@ -225,6 +225,7 @@ zplug load
 # gcloud CLI tools {{{
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+source <(kubectl completion zsh)
 # }}}
 
 # Source iTerm integration files if they exist
