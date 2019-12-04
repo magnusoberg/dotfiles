@@ -225,7 +225,9 @@ zplug load
 # gcloud CLI tools {{{
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-source <(kubectl completion zsh)
+# sourcing completion this way seems to work, but causes non-zero exit code!!
+# Therefore best to keep sourcing manual for now.
+# source <(kubectl completion zsh)
 # }}}
 
 # Source iTerm integration files if they exist
