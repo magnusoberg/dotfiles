@@ -155,9 +155,11 @@ bindkey '^gp' githash
 #}}}
 # Powerlevel9k variables {{{1
 POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_DISABLE_RPROMPT=true
 # POWERLEVEL9K_DISABLE_RPROMPT=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time time)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time time)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰─ $ "
@@ -201,7 +203,7 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # Powerlevel10k is MUCH faster than 9k - so I use that instead.
 # It is a drop-in replacement for 9k, so I don't need to change any of the variables
-zplug romkatv/powerlevel10k, use:powerlevel10k.zsh-theme
+zplug romkatv/powerlevel10k, as:theme, depth:1
 
 # Allow zplug to manage itself, for updates etc.
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
