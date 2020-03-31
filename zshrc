@@ -86,7 +86,7 @@ zstyle ':completion:*' menu select
 # End of compinstall }}}
 
 # Only run this on my 'local' machine - no remote machines.
-if [[ $HOST == 'magnus-mbp.local' ]]; then
+if [[ $HOST == 'magnus-mbp.lan' ]]; then
     echo "Starting local keychain daemon"
     eval $(keychain --eval --agents ssh --inherit any id_rsa)
     # eval $(keychain --eval id_rsa )
