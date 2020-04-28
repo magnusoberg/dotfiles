@@ -93,7 +93,7 @@ if [[ $HOST == 'magnus-mbp.lan' ]]; then
 fi
 
 # Enable 'z' commands
-eval "$(lua ~/repos/src/z.lua/z.lua --init zsh enhance fzf)"
+eval "$(lua ~/repos/src/z.lua/z.lua --init zsh enhanced fzf)"
 
 # Source my files
 # make sure to secure your ~/.zsh directory so only you can write there!
@@ -174,7 +174,7 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=grey15
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=gold1
 
 # show only the last three directories
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=5
 
 # enable the vcs changeset commit id
 POWERLEVEL9K_SHOW_CHANGESET=true
@@ -238,3 +238,7 @@ source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 # [[ -e "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
 
 #End of file
+
+# nostromo [section begin]
+eval "$(nostromo completion)"
+# nostromo [section end]
