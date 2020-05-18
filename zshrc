@@ -86,11 +86,11 @@ zstyle ':completion:*' menu select
 # End of compinstall }}}
 
 # Only run this on my 'local' machine - no remote machines.
-if [[ $HOST == 'magnus-mbp.lan' ]]; then
-    echo "Starting local keychain daemon"
-    eval $(keychain --eval --agents ssh --inherit any id_rsa)
-    # eval $(keychain --eval id_rsa )
-fi
+# if [[ $HOST == 'magnus-mbp.lan' ]]; then
+#     echo "Starting local keychain daemon"
+#     eval $(keychain --eval --agents ssh --inherit any id_rsa)
+#     # eval $(keychain --eval id_rsa )
+# fi
 
 # Enable 'z' commands
 eval "$(lua ~/repos/src/z.lua/z.lua --init zsh enhanced fzf)"
