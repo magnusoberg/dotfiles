@@ -226,8 +226,8 @@ zplug load
 # [[ -f ~/Library/Python/2.7/bin/aws_zsh_completer.sh ]] && source ~/Library/Python/2.7/bin/aws_zsh_completer.sh
 # }}}
 # gcloud CLI tools {{{
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+#source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+#source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 # sourcing completion this way seems to work, but causes non-zero exit code!!
 # Therefore best to keep sourcing manual for now.
 # source <(kubectl completion zsh)
@@ -240,5 +240,5 @@ source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 #End of file
 
 # nostromo [section begin]
-eval "$(nostromo completion)"
+#eval "$(nostromo completion)"
 # nostromo [section end]
