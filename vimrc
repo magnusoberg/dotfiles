@@ -1,4 +1,4 @@
-" Vim config file optimized for Mac OSX
+" Vim config file optimized for MacOS
 " Author: Magnus Oberg
 
 " Setup leader key to use Space as leader instead of ','
@@ -191,6 +191,8 @@ call plug#begin()
 " Could simply use: Plug '~/.fzf' to reference the binary, but the below will install fzf if missing.
 " It will also allow vim to auto-update OS version using :PlugUpdate
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" fzf.vim plugin is separate from the fzf binary, but fzf.vim requires fzf to run, so it should be installed first.
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 
@@ -235,10 +237,10 @@ Plug 'vim-airline/vim-airline-themes'   " Themes are now a separate plugin
 Plug 'airblade/vim-gitgutter'           " Show Git changes in the gutter line.
 Plug 'vim-scripts/SyntaxAttr.vim'       " Call SyntaxAttr() to find attibute under cursor.
 
-" Required by vim-snipmate
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'              " enter text+tab to expand dynamic text with preset tabstops etc.
+" Required by vim-snipmate -- disabled due to me not using functionality
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'tomtom/tlib_vim'
+" Plug 'garbas/vim-snipmate'              " enter text+tab to expand dynamic text with preset tabstops etc.
 
 " Vim note-taking plugin
 Plug 'xolox/vim-notes'
