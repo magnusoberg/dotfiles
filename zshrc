@@ -141,7 +141,7 @@ autoload run-help
 alias help='run-help'
 
 # autoload functions {{{1
-# ~/.zsh/autoload/githash
+# 'githash' is an autoloaded function from ~/.zsh/autoload/
 zle -N githash
 bindkey '^gp' githash
 
