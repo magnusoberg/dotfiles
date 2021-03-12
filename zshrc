@@ -20,6 +20,9 @@ export SAVEHIST=$HISTSIZE
 # Remove annoying Beer mug from Homebrew
 export HOMEBREW_NO_EMOJI=1
 
+# Make sure bat uses DarkNeon theme always
+export BAT_THEME=DarkNeon
+
 # Don't know why these were explicitly set. Leaving them unset until I can figure out why
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -192,8 +195,9 @@ else
 fi
 source "$ZPLUG_HOME/init.zsh"
 
+zplug "Aloxaf/fzf-tab"
 zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zdharma/fast-syntax-highlighting", defer:2
 
 # Powerlevel10k is MUCH faster than 9k - so I use that instead.
 # It is a drop-in replacement for 9k, so I don't need to change any of the variables
