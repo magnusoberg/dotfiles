@@ -88,8 +88,8 @@ zstyle ':completion:*' menu select
 
 # End of compinstall }}}
 
-# Enable 'z' commands
-eval "$(lua ~/repos/src/z.lua/z.lua --init zsh enhanced fzf)"
+# Enable 'z' commands via zoxide command
+eval "$(zoxide init zsh)"
 
 # Source my files
 # make sure to secure your ~/.zsh directory so only you can write there!
