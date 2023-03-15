@@ -88,6 +88,9 @@ zstyle ':completion:*' menu select
 
 # End of compinstall }}}
 
+# eval Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Enable 'z' commands via zoxide command
 eval "$(zoxide init zsh)"
 
@@ -186,13 +189,7 @@ POWERLEVEL9K_CHANGESET_HASH_LENGTH=7
 # export ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Setup zplug {{{1
-if [[ -d /usr/local/opt/zplug ]]; then
-    # installed via Homebrew.
-    export ZPLUG_HOME="/usr/local/opt/zplug"
-else
-    # installed manually in root
-    export ZPLUG_HOME="$HOME/.zplug"
-fi
+export ZPLUG_HOME="/opt/homebrew/opt/zplug"
 source "$ZPLUG_HOME/init.zsh"
 
 zplug "Aloxaf/fzf-tab"
