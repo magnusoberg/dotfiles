@@ -120,19 +120,14 @@ export EDITOR=vim
 
 path=(
   $path                                  # Don't overwrite existing paths
-  /usr/local/opt/go/libexec/bin          # Go installation path - needed by Go
-  ${GOPATH}/bin                          # Go executables
-  /Users/magnus/Library/Python/2.7/bin   # Python 2.7
-  /Users/magnus/Library/Python/3.7/bin   # Python3
-  /usr/local/sbin                        # Some extra Homebrew locations
-  # /usr/local/lib/ruby/gems/2.6.0/bin     # Default location for ruby gems
-  ~/.gem/ruby/2.3.0/bin                  # where --user-installed gems go
+  # put new paths here
 )
 
 # Function paths
 fpath=(
   $fpath
-  /usr/local/share/zsh-completions       # Recommended by `brew install zsh-completions`
+  /opt/homebrew/share/zsh-completions       # Recommended by `brew install zsh-completions`
+  /opt/homebrew/share/zsh/site-functions
   ~/.zsh/funcs                           # My personal functions
   ~/.zsh/completion                      # Completion scripts
   ~/.zsh/autoload
