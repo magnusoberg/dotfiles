@@ -142,10 +142,10 @@ fpath=(
 export GPG_TTY=$(tty)
 
 # Setup run-help to work for internal commands, and not alias for 'man'
-export HELPDIR=/usr/local/share/zsh/help
-unalias run-help 2>/dev/null    # stderr redirection needed in case you re-source your .zshrc file
-autoload run-help
-alias help='run-help'
+# export HELPDIR=/usr/local/share/zsh/help
+# unalias run-help 2>/dev/null    # stderr redirection needed in case you re-source your .zshrc file
+# autoload run-help
+# alias help='run-help'
 
 # autoload functions {{{1
 # 'githash' is an autoloaded function from ~/.zsh/autoload/
