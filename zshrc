@@ -27,9 +27,6 @@ export SAVEHIST=$HISTSIZE
 # Remove annoying Beer mug from Homebrew
 export HOMEBREW_NO_EMOJI=1
 
-# Make sure bat uses DarkNeon theme always
-export BAT_THEME=DarkNeon
-
 # Don't know why these were explicitly set. Leaving them unset until I can figure out why
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
