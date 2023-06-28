@@ -98,7 +98,7 @@ if $TERM_PROGRAM =~ "iTerm"
 endif
 
 " Default FZF setting: if you had used Homebrew to install fzf
-set rtp+=/usr/local/opt/fzf
+set rtp+=/opt/homebrew/opt/fzf
 
 " Use fd instead of find and grep
 let $FZF_DEFAULT_COMMAND='fd -tf --hidden --follow'
