@@ -95,9 +95,6 @@ zstyle ':completion:*' menu select
 # eval Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Enable 'z' commands via zoxide command
-eval "$(zoxide init zsh)"
-
 # Source my files
 # make sure to secure your ~/.zsh directory so only you can write there!
 local files=(~/.zsh/*.zsh) 2>/dev/null
@@ -219,6 +216,13 @@ zplug load
 #     source ${f}
 # done
 # }}}
+
+
+# Enable 'z' commands via zoxide command
+# For completions to work, the above line must be added after compinit is called
+eval "$(zoxide init zsh)"
+
+
 # AWS Cli tools... {{{
 # [[ -d ~/Library/Python/2.7/bin ]] && path=($path ~/Library/Python/2.7/bin)
 # [[ -f ~/Library/Python/2.7/bin/aws_zsh_completer.sh ]] && source ~/Library/Python/2.7/bin/aws_zsh_completer.sh
