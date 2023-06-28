@@ -1,7 +1,7 @@
 # .zshrc file
 # Author: Magnus Oberg
 
-# Zsh start up sequence: {{{
+# Zsh start up sequence
 #  1) /etc/zshenv   -> Always run for every zsh.   (login + interactive + other)
 #  2)   ~/.zshenv   -> Usually run for every zsh.  (login + interactive + other)
 #  3) /etc/zprofile -> Run for login shells.       (login)
@@ -10,7 +10,6 @@
 #  6)   ~/.zshrc    -> Run for interactive shells. (login + interactive)
 #  7) /etc/zlogin   -> Run for login shells.       (login)
 #  8)   ~/.zlogin   -> Run for login shells.       (login)
-# }}}
 # zmodload zsh/zprof
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -53,7 +52,7 @@ bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
 bindkey '^u' backward-kill-line
 
-# {{{ Set options
+# Set options
 # Only set non-default options to avoid clutter
 
 setopt autocd                # Allow typing plain directory names on the commandline
@@ -74,11 +73,9 @@ setopt nonotify              # Notify background jobs only just before PROMPT an
 setopt promptsubst           # Allow substitutions in the command prompt
 setopt sharehistory          # Share history between all sessions.
 
-# }}}
-
 export PS1='%m %~ %# '
 
-# Added by compinstall {{{
+# Added by compinstall
 
 # Seems I need to run this here in order to get completion running properly.
 # Used to rely on zplug, but this was not sufficient, as I couldn't get word completion for FASD working without this.
@@ -90,7 +87,7 @@ zstyle :compinstall filename ~/.zshrc
 # enable menu selection for completion system
 zstyle ':completion:*' menu select
 
-# End of compinstall }}}
+# End of compinstall
 
 # eval Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -142,13 +139,12 @@ export GPG_TTY=$(tty)
 # autoload run-help
 # alias help='run-help'
 
-# autoload functions {{{1
+# autoload functions
 # 'githash' is an autoloaded function from ~/.zsh/autoload/
 zle -N githash
 bindkey '^gp' githash
 
-#}}}
-# Powerlevel9k variables {{{1
+# Powerlevel9k variables
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time dir vcs status command_execution_time)
 
@@ -184,7 +180,7 @@ POWERLEVEL9K_CHANGESET_HASH_LENGTH=7
 # source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 # export ZSH_THEME="powerlevel9k/powerlevel9k"
 
-# Setup zplug {{{1
+# Setup zplug
 export ZPLUG_HOME="/opt/homebrew/opt/zplug"
 source "$ZPLUG_HOME/init.zsh"
 
@@ -203,14 +199,13 @@ zplug check || zplug install
 
 # 'zplug load' calls compinit automatically - and only once!
 zplug load
-# }}}
-# Source tmuxinator completion if it exists {{{
+
+# Source tmuxinator completion if it exists
 # [[ -f ~/.zsh/completions/tmuxinator.zsh ]] && source ~/.zsh/completions/tmuxinator.zsh
 # local files=(~/.zsh/completions/*.zsh-completion)
 # for f in $files; do
 #     source ${f}
 # done
-# }}}
 
 
 # Enable 'z' commands via zoxide command
@@ -218,17 +213,16 @@ zplug load
 eval "$(zoxide init zsh)"
 
 
-# AWS Cli tools... {{{
+# AWS Cli tools...
 # [[ -d ~/Library/Python/2.7/bin ]] && path=($path ~/Library/Python/2.7/bin)
 # [[ -f ~/Library/Python/2.7/bin/aws_zsh_completer.sh ]] && source ~/Library/Python/2.7/bin/aws_zsh_completer.sh
-# }}}
-# gcloud CLI tools {{{
+#
+# gcloud CLI tools
 #source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 #source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 # sourcing completion this way seems to work, but causes non-zero exit code!!
 # Therefore best to keep sourcing manual for now.
 # source <(kubectl completion zsh)
-# }}}
 
 # Source iTerm integration files if they exist
 # I should review these fucntions in more detail at some time
