@@ -204,13 +204,15 @@ Plug 'tpope/vim-dispatch'               " run asynchronous shell tasks through :
 Plug 'tpope/vim-rhubarb'                " vim 'hub' to allow :Gbrowse to browse GitHub code
 Plug 'tpope/vim-obsession'              " vim 'hub' to allow :Gbrowse to browse GitHub code
 
+" Allow 'K' to lookup vim language features in help
+Plug 'tpope/vim-scriptease'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+
 Plug 'vim-scripts/visualrepeat'         " recommended by vim-easy-align to repeat alignments on visual selections
 Plug 'michaeljsmith/vim-indent-object'  " Allows indentation ai, ii, aI (and iI) level text objects
 " Plug 'nathanaelkane/vim-indent-guides'  " Allows indentation guides (shadows)
 
-" Allow 'K' to lookup vim language features in help
-Plug 'tpope/vim-scriptease'
-Plug 'tpope/vim-abolish'
 
 " Plug 'chriskempson/base16-vim'
 Plug 'easymotion/vim-easymotion'
@@ -227,7 +229,7 @@ Plug 'mileszs/ack.vim'                  " Supports ag as well as ack
 " See https://github.com/junegunn/vim-plug/wiki/faq for more details
 Plug 'sjbach/lusty', has('ruby') ? {} : { 'on': [] }
 Plug 'terryma/vim-multiple-cursors'     " Allows Sublime style multiple cursors!
-Plug 'tomtom/tcomment_vim'
+" Plug 'tomtom/tcomment_vim'
 Plug 'vim-airline/vim-airline'          " Prefer this over Powerline as it seems more configurable
 Plug 'vim-airline/vim-airline-themes'   " Themes are now a separate plugin
 
