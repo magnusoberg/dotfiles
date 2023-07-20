@@ -113,7 +113,7 @@ autoload -Uz ${files:t}
 #   also /usr/libexec/path_helper -s uses some of the above to pre-generate paths
 export GOPATH=${HOME}/go
 export PATH
-export EDITOR=vim
+export EDITOR=nvim
 
 path=(
   $path                                  # Don't overwrite existing paths
